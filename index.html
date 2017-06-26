@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>360&deg; Image Gallery</title>
+    <title>Informatics Lab 360&deg; Image Gallery</title>
     <meta name="description" content="360&deg; Image Gallery - A-Frame">
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
     <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
@@ -14,18 +14,18 @@
   <body>
     <a-scene>
       <a-assets>
-        <!-- <img id="city" crossorigin="anonymous" src="https://github.com/met-office-lab/mo-VR-tour/blob/master/images/R0010001.JPG"> -->
-        <img id="city-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.jpg">
-        <img id="cubes-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-cubes.jpg">
-        <img id="sechelt-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg">
+        <img id="image1" crossorigin="anonymous" src="images/R0010001.JPG">
+        <img id="image2-thumb" crossorigin="anonymous" src="images/image2-thumb.png">
+        <img id="image1-thumb" crossorigin="anonymous" src="images/image1-thumb.png">
+        <img id="image3-thumb" crossorigin="anonymous" src="images/image3-thumb.png">
         <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
-        <img id="cubes" crossorigin="anonymous" src="images/R0010002.JPG">
-        <img id="sechelt" crossorigin="anonymous" src="images/R0010001.JPG">
+        <img id="image2" crossorigin="anonymous" src="images/R0010002.JPG">
+        <img id="image3" crossorigin="anonymous" src="images/R0010003.JPG">
 
         <!-- Image link template to be reused. -->
         <script id="link" type="text/html">
           <a-entity class="link"
-            geometry="primitive: plane; height: 1; width: 1"
+            geometry="primitive: circle; radius: 0.5; height: 1; width: 1"
             material="shader: flat; src: ${thumb}"
             event-set__1="_event: mousedown; scale: 1 1 1"
             event-set__2="_event: mouseup; scale: 1.2 1.2 1"
@@ -37,13 +37,13 @@
       </a-assets>
 
       <!-- 360-degree image. -->
-      <a-sky id="image-360" radius="10" src="#city"></a-sky>
+      <a-sky id="image-360" radius="10" src="#image1"></a-sky>
 
       <!-- Image links. -->
       <a-entity id="links" layout="type: line; margin: 1.5" position="0 -1 -4">
-        <a-entity template="src: #link" data-src="#cubes" data-thumb="#cubes-thumb"></a-entity>
-        <a-entity template="src: #link" data-src="#city" data-thumb="#city-thumb"></a-entity>
-        <a-entity template="src: #link" data-src="#sechelt" data-thumb="#sechelt-thumb"></a-entity>
+        <a-entity template="src: #link" data-src="#image1" data-thumb="#image1-thumb"></a-entity>
+        <a-entity template="src: #link" data-src="#image2" data-thumb="#image2-thumb"></a-entity>
+        <a-entity template="src: #link" data-src="#image3" data-thumb="#image3-thumb"></a-entity>
       </a-entity>
 
       <!-- Camera + cursor. -->
@@ -51,7 +51,7 @@
         <a-cursor id="cursor"
           animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
           animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
-          event-set__1="_event: mouseenter; color: springgreen"
+          event-set__1="_event: mouseenter; color: paleturquoise"
           event-set__2="_event: mouseleave; color: black"
           fuse="true"
           raycaster="objects: .link"></a-cursor>
