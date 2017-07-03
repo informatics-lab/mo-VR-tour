@@ -12,6 +12,7 @@
     <script src="components/set-image.js"></script>
     <script src="components/hide-after-video.js"></script>
     <script src="components/toggle-video-visibility.js"></script>
+    <script src="components/emit-on-click.js"></script>
   </head>
 
   <body>
@@ -58,12 +59,18 @@
 
       <!-- Image links. -->
       <a-entity id="links" layout="type: line; margin: 1.5" position="0 -1 -4">
-        <a-entity template="src: #link" data-src="#image1" data-thumb="#image1-thumb"></a-entity>
-        <a-entity template="src: #link" data-src="#image2" data-thumb="#image2-thumb"></a-entity>
-        <a-entity template="src: #link" data-src="#image3" data-thumb="#image3-thumb"></a-entity>
+        <a-entity id="link1" template="src: #link" data-src="#image1" data-thumb="#image1-thumb"
+          emit-on-click="emit: link1-click; target: #vid-controls"></a-entity>
+        <a-entity id="link2" template="src: #link" data-src="#image2" data-thumb="#image2-thumb"
+          emit-on-click="emit: link2-click; target: #vid-controls"></a-entity>
+        <a-entity id="link3" template="src: #link" data-src="#image3" data-thumb="#image3-thumb"
+          emit-on-click="emit: link3-click; target: #vid-controls"></a-entity>
       </a-entity>
 
-      <a-entity id="vid-controls">
+      <a-entity id="vid-controls" visible="false"
+        animation__1="property: visible; startEvents: link1-click; to: true"
+        animation__2="property: visible; startEvents: link2-click; to: false"
+        animation__3="property: visible; startEvents: link3-click; to: false">
         <!-- Video trigger entity -->
         <a-entity id="video-trigger1"
           template="src: #video-trigger"
