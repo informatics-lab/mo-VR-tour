@@ -70,23 +70,23 @@
           template="src: #link"
           data-src="#image2"
           data-thumb="#image2-thumb"
-          emit-on-click="emit: link2-click; target: #vid-controls">
+          emit-on-click="emit: link2-click; target: #vid-controls"
+          kill-video="on: click; target: #video-plane1; vid: #dog-test-vid">
         </a-entity>
         <a-entity id="link3"
           template="src: #link"
           data-src="#image3"
           data-thumb="#image3-thumb"
-          emit-on-click="emit: link3-click; target: #vid-controls">
+          emit-on-click="emit: link3-click; target: #vid-controls"
+          kill-video="on: click; target: #video-plane1; vid: #dog-test-vid">
         </a-entity>
       </a-entity>
 
       <!-- Video and video trigger - both disappear when image 1 is not selected -->
       <a-entity id="vid-controls" visible="true"
-        animation__1="property: visible; startEvents: link1-click; to: true"
-        animation__2="property: visible; startEvents: link2-click; from: false; to: true; dir: reverse"
-        animation__3="property: visible; startEvents: link3-click; from: false; to: true; dir: reverse"
-        kill-video="on: link2-click; target: #video-plane1; vid: #dog-test-vid"
-        kill-video="on: link3-click; target: #video-plane1; vid: #dog-test-vid">
+        animation__showcontrols="property: visible; startEvents: link1-click; to: true"
+        animation__hidecontrols1="property: visible; startEvents: link2-click; from: false; to: true; dir: reverse"
+        animation__hidecontrols2="property: visible; startEvents: link3-click; from: false; to: true; dir: reverse">
         <!-- Video trigger entity -->
         <a-entity id="video-trigger1"
           template="src: #video-trigger"
