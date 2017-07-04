@@ -13,6 +13,7 @@
     <script src="components/hide-after-video.js"></script>
     <script src="components/toggle-video-visibility.js"></script>
     <script src="components/emit-on-click.js"></script>
+    <script src="components/kill-video.js"></script>
   </head>
 
   <body>
@@ -26,7 +27,7 @@
         <img id="image1-thumb" src="images/image1-thumb.png">
         <img id="image3-thumb" src="images/image3-thumb.png">
 
-        <video id="dog-test-vid" src="images/OneMinuteHD.mp4.mp4"></video>
+        <video id="dog-test-vid" src="images/OneMinuteHD.mp4.mp4" muted="true"></video>
 
         <!-- Image link template -->
         <script id="link" type="text/html">
@@ -57,7 +58,7 @@
       <!-- 360-degree image -->
       <a-sky id="image-360" radius="100" src="#image1"></a-sky>
 
-      <!-- Image links. -->
+      <!-- Image links -->
       <a-entity id="links" layout="type: line; margin: 1.5" position="0 -1 -4">
         <a-entity id="link1"
           template="src: #link"
@@ -83,7 +84,9 @@
       <a-entity id="vid-controls" visible="true"
         animation__1="property: visible; startEvents: link1-click; to: true"
         animation__2="property: visible; startEvents: link2-click; from: false; to: true; dir: reverse"
-        animation__3="property: visible; startEvents: link3-click; from: false; to: true; dir: reverse">
+        animation__3="property: visible; startEvents: link3-click; from: false; to: true; dir: reverse"
+        kill-video="on: link2-click; target: #video-plane1; vid: #dog-test-vid"
+        kill-video="on: link3-click; target: #video-plane1; vid: #dog-test-vid">
         <!-- Video trigger entity -->
         <a-entity id="video-trigger1"
           template="src: #video-trigger"

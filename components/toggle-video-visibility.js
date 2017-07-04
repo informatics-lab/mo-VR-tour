@@ -8,7 +8,7 @@
 AFRAME.registerComponent('toggle-video-visibility', {
   schema: {
     on: {type: 'string'},
-    target: {type: 'selector'}, // Entity where video is displayed
+    target: {type: 'selector'}, // a-video or a-entity where video is played
     vid: {type: 'selector'} // Video asset
   },
 
