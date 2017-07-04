@@ -26,12 +26,12 @@
         <img id="image1-thumb" src="images/image1-thumb.png">
         <img id="image3-thumb" src="images/image3-thumb.png">
 
-        <video id="dog-test-vid" src="OneMinuteHD.mp4.mp4"></video>
+        <video id="dog-test-vid" src="images/OneMinuteHD.mp4.mp4"></video>
 
-        <!-- Image link template to be reused. -->
+        <!-- Image link template -->
         <script id="link" type="text/html">
           <a-entity class="link"
-            geometry="primitive: circle; radius: 0.5; height: 1; width: 1"
+            geometry="primitive: circle; radius: 0.5"
             material="shader: flat; src: ${thumb}"
             event-set__1="_event: mousedown; scale: 1 1 1"
             event-set__2="_event: mouseup; scale: 1.2 1.2 1"
@@ -59,24 +59,36 @@
 
       <!-- Image links. -->
       <a-entity id="links" layout="type: line; margin: 1.5" position="0 -1 -4">
-        <a-entity id="link1" template="src: #link" data-src="#image1" data-thumb="#image1-thumb"
-          emit-on-click="emit: link1-click; target: #vid-controls"></a-entity>
-        <a-entity id="link2" template="src: #link" data-src="#image2" data-thumb="#image2-thumb"
-          emit-on-click="emit: link2-click; target: #vid-controls"></a-entity>
-        <a-entity id="link3" template="src: #link" data-src="#image3" data-thumb="#image3-thumb"
-          emit-on-click="emit: link3-click; target: #vid-controls"></a-entity>
+        <a-entity id="link1"
+          template="src: #link"
+          data-src="#image1"
+          data-thumb="#image1-thumb"
+          emit-on-click="emit: link1-click; target: #vid-controls">
+        </a-entity>
+        <a-entity id="link2"
+          template="src: #link"
+          data-src="#image2"
+          data-thumb="#image2-thumb"
+          emit-on-click="emit: link2-click; target: #vid-controls">
+        </a-entity>
+        <a-entity id="link3"
+          template="src: #link"
+          data-src="#image3"
+          data-thumb="#image3-thumb"
+          emit-on-click="emit: link3-click; target: #vid-controls">
+        </a-entity>
       </a-entity>
 
-      <a-entity id="vid-controls" visible="false"
+      <!-- Video and video trigger - both disappear when image 1 is not selected -->
+      <a-entity id="vid-controls" visible="true"
         animation__1="property: visible; startEvents: link1-click; to: true"
-        animation__2="property: visible; startEvents: link2-click; to: false"
-        animation__3="property: visible; startEvents: link3-click; to: false">
+        animation__2="property: visible; startEvents: link2-click; from: false; to: true; dir: reverse"
+        animation__3="property: visible; startEvents: link3-click; from: false; to: true; dir: reverse">
         <!-- Video trigger entity -->
         <a-entity id="video-trigger1"
           template="src: #video-trigger"
           position="-4.3 0.5 -10"
           toggle-video-visibility="on: click; target: #video-plane1; vid: #dog-test-vid"></a-entity>
-
         <!-- Video triggered by #video-trigger1 -->
         <a-video id="video-plane1" visible="false"
           hide-after-video="video: #dog-test-vid"
@@ -88,7 +100,7 @@
       </a-entity>
 
       <!-- Camera + cursor. -->
-      <a-entity camera look-controls wasd-controls="false">
+      <a-entity camera look-controls>
         <a-cursor id="cursor"
           animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
           animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
