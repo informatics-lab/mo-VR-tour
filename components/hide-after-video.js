@@ -1,7 +1,7 @@
 /* global AFRAME */
 
 /**
- * Component that hides the target when a video ends.
+ * Component that hides the entity when a video ends.
  */
 
 AFRAME.registerComponent('hide-after-video', {

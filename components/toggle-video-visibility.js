@@ -3,6 +3,7 @@
 /**
  * Component that listens to an event, toggles visibility of the target
  * and plays a video from the beginning.
+ * Component should be used in the entity which emits the event
  */
 
 AFRAME.registerComponent('toggle-video-visibility', {
