@@ -40,9 +40,15 @@
       </a-image>
 
       <a-image id="instruments-POI-marker-1" src="#POI-marker-icon"
-        position="5 0 2"
+        position="5.5 -3 6"
         rotation="0 90 0"
         emit-on-click="emit: instruments-POI-panel-1-open; target: #instruments-POI-panel-1">
+      </a-image>
+
+      <a-image id="instruments-POI-marker-2" src="#POI-marker-icon"
+        position="-5 -3 2.5"
+        rotation="0 90 0"
+        emit-on-click="emit: instruments-POI-panel-2-open; target: #instruments-POI-panel-2">
       </a-image>
 
       <a-entity id="fitzroy-POI-panel" visible="false"
@@ -75,6 +81,23 @@
           width="0.5"
           height="0.5"
           emit-on-click="emit: instruments-POI-panel-1-close; target: #instruments-POI-panel-1">
+        </a-image>
+      </a-entity>
+
+      <a-entity id="instruments-POI-panel-2" visible="false"
+        position="-4 0 2"
+        rotation="0 110 0"
+        animation__show="property: visible; startEvents: instruments-POI-panel-2-open; to: true"
+        animation__hide="property: visible; startEvents: instruments-POI-panel-2-close; from: false; to: true; dir: reverse">
+        <a-image src="#obs-instruments-image3"
+          height="3"
+          width="6">
+        </a-image>
+        <a-image src="#close-button"
+          position="2 1 0.5"
+          width="0.5"
+          height="0.5"
+          emit-on-click="emit: instruments-POI-panel-2-close; target: #instruments-POI-panel-2">
         </a-image>
       </a-entity>
 
