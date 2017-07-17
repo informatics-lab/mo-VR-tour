@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Informatics Lab 360&deg; Image Gallery</title>
+    <meta name="description" content="Informatics Lab 360&deg; Image Gallery">
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
+    <script src="components/set-image.js"></script>
+    <script src="components/hide-after-video.js"></script>
+    <script src="components/toggle-video-visibility.js"></script>
+    <script src="components/emit-on-click.js"></script>
+    <script src="components/kill-video.js"></script>
+  </head>
+
+  <body>
+    <a-scene>
+
+      <a-assets>
+        <img id="image1" src="images/R0010001.JPG">
+        <img id="image2" src="images/R0010002.JPG">
+        <img id="image3" src="images/R0010003.JPG">
+        <img id="image2-thumb" src="images/image2-thumb.png">
+        <img id="image1-thumb" src="images/image1-thumb.png">
+        <img id="image3-thumb" src="images/image3-thumb.png">
+
+        <video id="dog-test-vid" src="images/OneMinuteHD.mp4.mp4" muted="true"></video>
+
+        <!-- Image link template -->
+        <script id="link" type="text/html">
+          <a-entity class="link"
+            geometry="primitive: circle; radius: 0.5"
+            material="shader: flat; src: ${thumb}"
+            event-set__1="_event: mousedown; scale: 1 1 1"
+            event-set__2="_event: mouseup; scale: 1.2 1.2 1"
+            event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
+            event-set__4="_event: mouseleave; scale: 1 1 1"
+            set-image="on: click; target: #image-360; src: ${src}"></a-entity>
+        </script>
+
+        <!-- Templates for video triggers -->
+        <script id="video-trigger" type="text/html">
+          <a-entity
+            geometry="primitive: circle; radius: 0.5"
+            material="opacity: 0.5"
+            color="white"
+            event-set__1="_event: mousedown; scale: 1 1 1"
+            event-set__2="_event: mouseup; scale: 1.2 1.2 1"
+            event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
+            event-set__4="_event: mouseleave; scale: 1 1 1">
+          </a-entity>
+        </script>
+      </a-assets>
+
+      <!-- 360-degree image -->
+      <a-sky id="image-360" radius="100" src="#image1"></a-sky>
+
+      <!-- Image links -->
+      <a-entity id="links" layout="type: line; margin: 1.5" position="0 -1 -4">
+        <a-entity id="link1"
+          template="src: #link"
+          data-src="#image1"
+          data-thumb="#image1-thumb"
+          emit-on-click="emit: link1-click; target: #vid-controls">
+        </a-entity>
+        <a-entity id="link2"
+          template="src: #link"
+          data-src="#image2"
+          data-thumb="#image2-thumb"
+          emit-on-click="emit: link2-click; target: #vid-controls"
+          kill-video="on: click; target: #video-plane1; vid: #dog-test-vid">
+        </a-entity>
+        <a-entity id="link3"
+          template="src: #link"
+          data-src="#image3"
+          data-thumb="#image3-thumb"
+          emit-on-click="emit: link3-click; target: #vid-controls"
+          kill-video="on: click; target: #video-plane1; vid: #dog-test-vid">
+        </a-entity>
+      </a-entity>
+
+      <!-- Video and video trigger - both disappear when image 1 is not selected -->
+      <a-entity id="vid-controls" visible="true"
+        animation__showcontrols="property: visible; startEvents: link1-click; to: true"
+        animation__hidecontrols1="property: visible; startEvents: link2-click; from: false; to: true; dir: reverse"
+        animation__hidecontrols2="property: visible; startEvents: link3-click; from: false; to: true; dir: reverse">
+        <!-- Video trigger entity -->
+        <a-entity id="video-trigger1"
+          template="src: #video-trigger"
+          position="-4.3 0.5 -10"
+          toggle-video-visibility="on: click; target: #video-plane1; vid: #dog-test-vid"></a-entity>
+        <!-- Video triggered by #video-trigger1 -->
+        <a-video id="video-plane1" visible="false"
+          hide-after-video="video: #dog-test-vid"
+          src="#dog-test-vid"
+          position="10 5 -20"
+          width="16"
+          height="9">
+        </a-video>
+      </a-entity>
+
+      <!-- Camera + cursor. -->
+      <a-entity camera look-controls>
+        <a-cursor id="cursor"
+          animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+          animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+          event-set__1="_event: mouseenter; color: #b9dc0c"
+          event-set__2="_event: mouseleave; color: black"
+          fuse="true"></a-cursor>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
