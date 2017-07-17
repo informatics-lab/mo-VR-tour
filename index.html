@@ -2,20 +2,61 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Informatics Lab 360&deg; Image Gallery</title>
+    <title>National Meteorological Library VR Experience</title>
     <meta name="description" content="Informatics Lab 360&deg; Image Gallery">
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
     <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
     <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
     <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
     <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
+    <script src="components/emit-on-click.js"></script>
   </head>
 
   <body>
     <a-scene>
-      
-      <a-assets>
 
+      <a-assets>
+        <img id="lib-360-background" src="images/lib-background.JPG">
+        <img id="d-day-chart-image" src="images/d-day-chart.jpg">
+        <img id="fitzroy-portrait-image" src="images/fitzroy-portrait.jpg">
+        <img id="HMS-beagle-image" src="images/HMS-beagle.jpg">
+        <img id="close-button" src="images/close-button.svg">
+        <img id="POI-marker-icon" src="images/POI-marker-icon.png">
       </a-assets>
+      <!-- 360 background -->
+      <a-sky id="image-360" radius="100" src="#lib-360-background" rotation="0 -20 0"></a-sky>
+
+      <a-image id="fitzroy-POI-marker" src="#POI-marker-icon"
+        position="10 3 -10"
+        emit-on-click="emit: POI-marker-click; target: #fitzroy-POI-panel">
+      </a-image>
+
+      <a-entity id="fitzroy-POI-panel" visible="false"
+        geometry="primitive: plane; height: 2.65; width: 2"
+        position="0 0 -5"
+        animation__show="property: visible; startEvents: POI-marker-click; to: true"
+        animation__hide="property: visible; startEvents: panel-close; from: false; to: true; dir: reverse">
+        <a-image src=#fitzroy-portrait-image
+          height="2.65"
+          width="2">
+        </a-image>
+        <a-image src="#close-button"
+          width="0.5"
+          height="0.5"
+          position="0.6 1 0.1"
+          emit-on-click="emit: panel-close; target: #fitzroy-POI-panel">
+        </a-image>
+      </a-entity>
+
+      <!-- Camera + cursor. -->
+      <a-entity camera look-controls>
+        <a-cursor id="cursor"
+          animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+          animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+          event-set__1="_event: mouseenter; color: #b9dc0c"
+          event-set__2="_event: mouseleave; color: black"
+          fuse="true"></a-cursor>
+      </a-entity>
+
     </a-scene>
   </body>
