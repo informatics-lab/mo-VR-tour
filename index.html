@@ -19,7 +19,12 @@
         <img id="lib-360-background" src="images/lib-background.JPG">
         <img id="d-day-chart-image" src="images/d-day-chart.jpg">
         <img id="fitzroy-portrait-image" src="images/fitzroy-portrait.jpg">
+        <img id="fitzroy-clock-image" src="images/fitzroy-clock.jpg">
         <img id="HMS-beagle-image" src="images/HMS-beagle.jpg">
+        <img id="obs-instruments-image1" src="images/obs-instruments-1.jpg">
+        <img id="obs-instruments-image2" src="images/obs-instruments-2.jpg">
+        <img id="obs-instruments-image3" src="images/obs-instruments-3.jpg">
+        <img id="obs-instruments-image4" src="images/obs-instruments-4.jpg">
         <img id="close-button" src="images/close-button.svg">
         <img id="POI-marker-icon" src="images/POI-marker-icon.png">
       </a-assets>
@@ -28,14 +33,22 @@
 
       <a-image id="fitzroy-POI-marker" src="#POI-marker-icon"
         position="10 3 -10"
-        emit-on-click="emit: POI-marker-click; target: #fitzroy-POI-panel">
+        rotation="0 -45 0"
+        height="2"
+        width="2"
+        emit-on-click="emit: fitzroy-POI-panel-open; target: #fitzroy-POI-panel">
+      </a-image>
+
+      <a-image id="instruments-POI-marker-1" src="#POI-marker-icon"
+        position="5 0 2"
+        rotation="0 90 0"
+        emit-on-click="emit: instruments-POI-panel-1-open; target: #instruments-POI-panel-1">
       </a-image>
 
       <a-entity id="fitzroy-POI-panel" visible="false"
-        geometry="primitive: plane; height: 2.65; width: 2"
         position="0 0 -5"
-        animation__show="property: visible; startEvents: POI-marker-click; to: true"
-        animation__hide="property: visible; startEvents: panel-close; from: false; to: true; dir: reverse">
+        animation__show="property: visible; startEvents: fitzroy-POI-panel-open; to: true"
+        animation__hide="property: visible; startEvents: fitzroy-POI-panel-close; from: false; to: true; dir: reverse">
         <a-image src=#fitzroy-portrait-image
           height="2.65"
           width="2">
@@ -44,7 +57,24 @@
           width="0.5"
           height="0.5"
           position="0.6 1 0.1"
-          emit-on-click="emit: panel-close; target: #fitzroy-POI-panel">
+          emit-on-click="emit: fitzroy-POI-panel-close; target: #fitzroy-POI-panel">
+        </a-image>
+      </a-entity>
+
+      <a-entity id="instruments-POI-panel-1" visible="false"
+        position="4 0 2"
+        rotation="0 70 0"
+        animation__show="property: visible; startEvents: instruments-POI-panel-1-open; to: true"
+        animation__hide="property: visible; startEvents: instruments-POI-panel-1-close; from: false; to: true; dir: reverse">
+        <a-image src="#obs-instruments-image1"
+          height="3"
+          width="6">
+        </a-image>
+        <a-image src="#close-button"
+          position="-2 1 -0.5"
+          width="0.5"
+          height="0.5"
+          emit-on-click="emit: instruments-POI-panel-1-close; target: #instruments-POI-panel-1">
         </a-image>
       </a-entity>
 
