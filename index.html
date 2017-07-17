@@ -52,17 +52,18 @@
       </a-image>
 
       <a-entity id="fitzroy-POI-panel" visible="false"
-        position="0 0 -5"
+        position="4 1.5 -4"
+        rotation="20 -45 0"
         animation__show="property: visible; startEvents: fitzroy-POI-panel-open; to: true"
         animation__hide="property: visible; startEvents: fitzroy-POI-panel-close; from: false; to: true; dir: reverse">
         <a-image src=#fitzroy-portrait-image
-          height="2.65"
-          width="2">
+          height="3.75"
+          width="3">
         </a-image>
         <a-image src="#close-button"
           width="0.5"
           height="0.5"
-          position="0.6 1 0.1"
+          position="1 1.4 0.1"
           emit-on-click="emit: fitzroy-POI-panel-close; target: #fitzroy-POI-panel">
         </a-image>
       </a-entity>
