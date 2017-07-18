@@ -27,6 +27,8 @@
         <img id="obs-instruments-image4" src="images/obs-instruments-4.jpg">
         <img id="archives-display-image" src="images/weather-lore.jpg">
         <img id="uniform-image" src="images/suit.jpg">
+        <img id="skua-rocket-image" src="images/skua-rocket.jpg">
+        <img id="microwave-image" src="images/microwave-sounding-unit.jpg">
         <img id="close-button" src="images/close-button.svg">
         <img id="POI-marker-icon" src="images/POI-marker-icon.png">
       </a-assets>
@@ -84,6 +86,18 @@
         height="1.5"
         width="1.5"
         emit-on-click="emit: archives-case-POI-panel-open; target: #archives-case-POI-panel">
+      </a-image>
+      <!-- Skua rocket -->
+      <a-image id="skua-rocket-POI-marker" src="#POI-marker-icon"
+        position = "-8 1 -3"
+        rotation = "0 95 0"
+        emit-on-click="emit: skua-rocket-POI-panel-open; target: #skua-rocket-POI-panel">
+      </a-image>
+      <!-- Advanced microwave sounding unit -->
+      <a-image id="microwave-POI-marker" src="#POI-marker-icon"
+        position = "-8 1 4"
+        rotation = "0 95 0"
+        emit-on-click="emit: microwave-POI-panel-open; target: #microwave-POI-panel">
       </a-image>
 
       <!-- POI PANELS -->
@@ -207,6 +221,42 @@
           emit-on-click="emit: archives-case-POI-panel-close; target: #archives-case-POI-panel">
         </a-image>
       </a-entity>
+      <!-- Skua rocket -->
+      <a-entity id="skua-rocket-POI-panel" visible="false"
+        position="-6 1 -5.5"
+        rotation="10 60 0"
+        animation__show="property: visible; startEvents: skua-rocket-POI-panel-open; to: true"
+        animation__hide="property: visible; startEvents: skua-rocket-POI-panel-close; from: false; to: true; dir: reverse">
+        <a-image src="#skua-rocket-image"
+          height="4.6"
+          width="8.4"
+          rotation = "0 0 270">
+        </a-image>
+        <a-image src="#close-button"
+          position="1.2 3.2 1"
+          width="0.5"
+          height="0.5"
+          emit-on-click="emit: skua-rocket-POI-panel-close; target: #skua-rocket-POI-panel">
+        </a-image>
+      </a-entity>
+      <!-- Advanced microwave sounding unit -->
+      <a-entity id="microwave-POI-panel" visible="false"
+        position="-7 1 2"
+        rotation="0 90 0"
+        animation__show="property: visible; startEvents: microwave-POI-panel-open; to: true"
+        animation__hide="property: visible; startEvents: microwave-POI-panel-close; from: false; to: true; dir: reverse">
+        <a-image src="#microwave-image"
+          height="4.6"
+          width="8.4">
+        </a-image>
+        <a-image src="#close-button"
+          position="3.5 1.4 1"
+          width="0.5"
+          height="0.5"
+          emit-on-click="emit: microwave-POI-panel-close; target: #microwave-POI-panel">
+        </a-image>
+      </a-entity>
+
 
       <!-- Camera + cursor. -->
       <a-entity camera look-controls>
