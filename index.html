@@ -26,6 +26,7 @@
         <img id="obs-instruments-image3" src="images/obs-instruments-3.jpg">
         <img id="obs-instruments-image4" src="images/obs-instruments-4.jpg">
         <!-- <img id="archives-display-image" src-"images/weather-lore.jpg"> -->
+        <img id="uniform-image" src="images/suit.jpg">
         <img id="close-button" src="images/close-button.svg">
         <img id="POI-marker-icon" src="images/POI-marker-icon.png">
       </a-assets>
@@ -67,6 +68,14 @@
         height="1.5"
         width="1.5"
         emit-on-click="emit: weather-chart-POI-panel-open; target: #weather-chart-POI-panel">
+      </a-image>
+      <!-- Air Observer Uniform -->
+      <a-image id="uniform-POI-marker" src="#POI-marker-icon"
+        position="-13 7 -10"
+        rotation="0 45 0"
+        height="1.5"
+        width="1.5"
+        emit-on-click="emit: uniform-POI-panel-open; target: #uniform-POI-panel">
       </a-image>
       <!-- Archives Display Case -->
       <a-image id="archives-case-POI-marker" src="#POI-marker-icon"
@@ -161,6 +170,24 @@
           height="0.5"
           position="4.5 2.5 0.1"
           emit-on-click="emit: weather-chart-POI-panel-close; target: #weather-chart-POI-panel">
+        </a-image>
+      </a-entity>
+      <!-- Air Observer Uniform -->
+      <a-entity id="uniform-POI-panel" visible="false"
+        position="-8 0 -5"
+        rotation="0 50 0"
+        animation__show="property: visible; startEvents: uniform-POI-panel-open; to: true"
+        animation__hide="property: visible; startEvents: uniform-POI-panel-close; from: false; to: true; dir: reverse">
+        <a-image src=#uniform-image
+          height="4"
+          width="8"
+          rotation="0 0 -90">
+        </a-image>
+        <a-image src="#close-button"
+          width="0.5"
+          height="0.5"
+          position="1.5 3.5 0.1"
+          emit-on-click="emit: uniform-POI-panel-close; target: #uniform-POI-panel">
         </a-image>
       </a-entity>
       <!-- Archives display case -->
