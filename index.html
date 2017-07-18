@@ -34,16 +34,16 @@
       <a-image id="fitzroy-POI-marker" src="#POI-marker-icon"
         position="10 3 -10"
         rotation="0 -45 0"
-        height="2"
-        width="2"
+        height="1.5"
+        width="1.5"
         emit-on-click="emit: fitzroy-POI-panel-open; target: #fitzroy-POI-panel">
       </a-image>
 
       <a-image id="beagle-POI-marker" src="#POI-marker-icon"
         position="3 2.5 -10"
         rotation="0 0 0"
-        height="2"
-        width="2"
+        height="1.5"
+        width="1.5"
         emit-on-click="emit: beagle-POI-panel-open; target: #beagle-POI-panel">
       </a-image>
 
@@ -57,6 +57,13 @@
         position="-5 -3 2.5"
         rotation="0 90 0"
         emit-on-click="emit: instruments-POI-panel-2-open; target: #instruments-POI-panel-2">
+      </a-image>
+
+      <a-image id="weather-chart-POI-marker" src="#POI-marker-icon"
+        position="-6.4 3 -10"
+        height="1.5"
+        width="1.5"
+        emit-on-click="emit: weather-chart-POI-panel-open; target: #weather-chart-POI-panel">
       </a-image>
 
       <a-entity id="fitzroy-POI-panel" visible="false"
@@ -124,6 +131,23 @@
           width="0.5"
           height="0.5"
           emit-on-click="emit: instruments-POI-panel-2-close; target: #instruments-POI-panel-2">
+        </a-image>
+      </a-entity>
+
+      <a-entity id="weather-chart-POI-panel" visible="false"
+        position="-4 2.5 -5"
+        rotation="10 35 0"
+        animation__show="property: visible; startEvents: weather-chart-POI-panel-open; to: true"
+        animation__hide="property: visible; startEvents: weather-chart-POI-panel-close; from: false; to: true; dir: reverse">
+        <a-image src=#d-day-chart-image
+          height="6"
+          width="10">
+        </a-image>
+        <a-image src="#close-button"
+          width="0.5"
+          height="0.5"
+          position="4.5 2.5 0.1"
+          emit-on-click="emit: weather-chart-POI-panel-close; target: #weather-chart-POI-panel">
         </a-image>
       </a-entity>
 
