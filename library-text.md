@@ -22,3 +22,41 @@ The body of informal folklore relating to predicting the weather, includes prove
 # Library
 
 The library is open to the public and offers a range of reference materials and materials for loan, on-site internet access to key online journals and free WiFi . Apart from the collection of books, journals and reports, the records include archive of original meteorological data, weather charts, private weather diaries and more. Increasing amount of content is being digitised and available on the internet.
+
+# Aeroplanes
+
+* 8 models of aircraft used for observations, from 1944 up until present day;
+* Includes "Snoopy", Met Office Research Flight Aircraft, used by Met Office from 1973 until 2001 to measure atmospheric variables, radiation, cloud variables, atmospheric chemistry (see Library Factsheet "Take Flight");
+* Oldest aircrafts in display are Meteorological Research Flight (MRF) used from '46-'52 and the Mosquito, used from '44-'55. MRF measured up to 20000ft while Mosquito could fly up to 40000ft so was used for measuring stratosphere.
+* Newest aircraft in display is Met Office Civil Contingencies Aircraft (Mossa) Cessna 421, used to measure volcanic ash in atmosphere. Can also measure aerosols, such as those from large fires. Used by Met Office Hazard Centre.
+
+# Portrait, Clock
+
+* Admiral Fitzroy was the first director of the MO, appointed in 1854;
+* He was a pioneer of meteorology and forecasting;
+* Clock was presented to Fitzroy by Minister of Marine and Colonies of France in 1864 in recognition of the storm warning system which he provided to the French Navy;
+* Clock was bequeathed to MO in 1943 by a daughter of Fitzroy.
+
+# D-Day Chart
+
+* Copy of the weather chart from 13:00 on 6th June, 1944;
+* Complied using data from Met Office (then part of Air Ministry), Royal Navy's Weather Service and the US Army Air Force;
+* D-day landings had been postponed from the 5th due to stormy weather over the English Channel. They were then given the go ahead for the 6th due to a high pressure system over the Atlantic which was predicted to bring good weather;
+* Weather observations from German-occupied Europe are visible on the Allied chart as they had been deciphered from German radio transmissions.
+
+# Skua Rocket
+
+* Skua solid-fuel rocket system created by Bristol Aerojet Ltd
+* Rocket was recovered from Salisbury Plain by Gordon Bridge after a test flight;
+* Gordon Bridge was a Project Officer for MO Skua sounding rocket programme;
+* MO High Altitude Research Branch used Skua rockets to study atmosphere up to 80km;
+* Programme commenced in 1959 and ran until late '70s;
+* Used in Scotland, Wales, Sweden, French Guiana and Maldives.
+
+# AMSU-B Engineering Model
+
+* Advanced Microwave Sounding Unit-B (AMSU-B): microwave radiometer sensitive to atmospheric temperature and humidity;
+* Used on US satellites NOAA-16 (1998 launch), NOAA-17 (2000) and NOAA-18 (2002);
+* Engineering model on display is a prototype used as a flight spare on NOAA-17;
+* All flight instruments on AMSU-B were procured and tested by the MO and supplied to NOAA;
+* Data from AMSU-B is used by MO in operational forecasting models.
