@@ -3,13 +3,14 @@
   <head>
     <meta charset="utf-8">
     <title>National Meteorological Library VR Experience</title>
-    <meta name="description" content="Informatics Lab 360&deg; Image Gallery">
+    <meta name="description" content="National Meteorological Library VR Experience">
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
     <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
     <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
     <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
-    <script src="components/emit-on-click.js"></script>
+    <!-- <script src="components/emit-on-click.js"></script> -->
   </head>
 
   <body>
@@ -37,42 +38,40 @@
 
       <!-- POI MARKERS -->
       <!-- Fitzroy Portrait -->
-      <a-image id="fitzroy-POI-marker" src="#POI-marker-icon"
+      <a-image id="fitzroy-POI-marker" marker-id="fitzroy" marker-for="fitzroy-POI-panel" src="#POI-marker-icon"
         position="10 3 -10"
         rotation="0 -45 0"
         height="1.5"
-        width="1.5"
-        emit-on-click="emit: fitzroy-POI-panel-open; target: #fitzroy-POI-panel">
+        width="1.5">
       </a-image>
       <!-- HMS Beagle Model -->
-      <a-image id="beagle-POI-marker" src="#POI-marker-icon"
+      <a-image id="beagle-POI-marker" marker-id="beagle" marker-for="beagle-POI-panel" src="#POI-marker-icon"
         position="3 2.5 -10"
         rotation="0 0 0"
         height="1.5"
-        width="1.5"
-        emit-on-click="emit: beagle-POI-panel-open; target: #beagle-POI-panel">
+        width="1.5">
       </a-image>
       <!-- Display case 1 -->
-      <a-image id="instruments-POI-marker-1" src="#POI-marker-icon"
+      <a-image id="instruments-POI-marker-1" marker-id="instruments-1" marker-for="instruments-POI-panel-1" src="#POI-marker-icon"
         position="5.5 -3 6"
         rotation="0 90 0"
         emit-on-click="emit: instruments-POI-panel-1-open; target: #instruments-POI-panel-1">
       </a-image>
       <!-- Display case 2 -->
-      <a-image id="instruments-POI-marker-2" src="#POI-marker-icon"
+      <a-image id="instruments-POI-marker-2" marker-id="instruments-2" marker-for="instruments-POI-panel-2" src="#POI-marker-icon"
         position="-5 -3 2.5"
         rotation="0 90 0"
         emit-on-click="emit: instruments-POI-panel-2-open; target: #instruments-POI-panel-2">
       </a-image>
       <!-- D-day weather chart -->
-      <a-image id="weather-chart-POI-marker" src="#POI-marker-icon"
+      <a-image id="weather-chart-POI-marker" marker-id="weather-chart" marker-for="weather-chart-POI-panel" src="#POI-marker-icon"
         position="-6.4 3 -10"
         height="1.5"
         width="1.5"
         emit-on-click="emit: weather-chart-POI-panel-open; target: #weather-chart-POI-panel">
       </a-image>
       <!-- Air Observer Uniform -->
-      <a-image id="uniform-POI-marker" src="#POI-marker-icon"
+      <a-image id="uniform-POI-marker" marker-id="uniform" marker-for="uniform-POI-panel" src="#POI-marker-icon"
         position="-13 7 -10"
         rotation="0 45 0"
         height="1.5"
@@ -80,7 +79,7 @@
         emit-on-click="emit: uniform-POI-panel-open; target: #uniform-POI-panel">
       </a-image>
       <!-- Archives Display Case -->
-      <a-image id="archives-case-POI-marker" src="#POI-marker-icon"
+      <a-image id="archives-case-POI-marker" marker-id="archives-case" marker-for="archives-case-POI-panel" src="#POI-marker-icon"
         position="-15 1 -1"
         rotation="0 -90 0"
         height="1.5"
@@ -88,13 +87,13 @@
         emit-on-click="emit: archives-case-POI-panel-open; target: #archives-case-POI-panel">
       </a-image>
       <!-- Skua rocket -->
-      <a-image id="skua-rocket-POI-marker" src="#POI-marker-icon"
+      <a-image id="skua-rocket-POI-marker" marker-id="skua-rocket" marker-for="skua-rocket-POI-panel" src="#POI-marker-icon"
         position = "-10 1 -4"
         rotation = "0 95 0"
         emit-on-click="emit: skua-rocket-POI-panel-open; target: #skua-rocket-POI-panel">
       </a-image>
       <!-- Advanced microwave sounding unit -->
-      <a-image id="microwave-POI-marker" src="#POI-marker-icon"
+      <a-image id="microwave-POI-marker" marker-id="microwave" marker-for="microwave-POI-panel" src="#POI-marker-icon"
         position = "-8 1 4"
         rotation = "0 95 0"
         emit-on-click="emit: microwave-POI-panel-open; target: #microwave-POI-panel">
@@ -104,156 +103,129 @@
       <!-- Fitzroy Portrait -->
       <a-entity id="fitzroy-POI-panel" visible="false"
         position="4 1.5 -4"
-        rotation="20 -45 0"
-        animation__show="property: visible; startEvents: fitzroy-POI-panel-open; to: true"
-        animation__hide="property: visible; startEvents: fitzroy-POI-panel-close; from: false; to: true; dir: reverse">
+        rotation="20 -45 0">
         <a-image src=#fitzroy-portrait-image
           height="3.75"
           width="3">
         </a-image>
-        <a-image src="#close-button"
+        <a-image class="close-button" src="#close-button"
           width="0.5"
           height="0.5"
-          position="1 1.4 0.1"
-          emit-on-click="emit: fitzroy-POI-panel-close; target: #fitzroy-POI-panel">
+          position="1 1.4 0.1">
         </a-image>
       </a-entity>
       <!-- HMS Beagle Model -->
       <a-entity id="beagle-POI-panel" visible="false"
         position="1.3 1.5 -4"
-        rotation="10 -15 0"
-        animation__show="property: visible; startEvents: beagle-POI-panel-open; to: true"
-        animation__hide="property: visible; startEvents: beagle-POI-panel-close; from: false; to: true; dir: reverse">
+        rotation="10 -15 0">
         <a-image src=#HMS-beagle-image
           height="3.75"
           width="3">
         </a-image>
-        <a-image src="#close-button"
+        <a-image class="close-button" src="#close-button"
           width="0.5"
           height="0.5"
-          position="1 1.4 0.1"
-          emit-on-click="emit: beagle-POI-panel-close; target: #beagle-POI-panel">
+          position="1 1.4 0.1">
         </a-image>
       </a-entity>
       <!-- Display case 1 -->
       <a-entity id="instruments-POI-panel-1" visible="false"
         position="4 0 2"
-        rotation="0 70 0"
-        animation__show="property: visible; startEvents: instruments-POI-panel-1-open; to: true"
-        animation__hide="property: visible; startEvents: instruments-POI-panel-1-close; from: false; to: true; dir: reverse">
+        rotation="0 70 0">
         <a-image src="#obs-instruments-image1"
           height="3"
           width="6">
         </a-image>
-        <a-image src="#close-button"
+        <a-image class="close-button" src="#close-button"
           position="-2 1 -0.5"
           width="0.5"
-          height="0.5"
-          emit-on-click="emit: instruments-POI-panel-1-close; target: #instruments-POI-panel-1">
+          height="0.5">
         </a-image>
       </a-entity>
       <!-- Display case 2 -->
       <a-entity id="instruments-POI-panel-2" visible="false"
         position="-4 0 2"
-        rotation="0 110 0"
-        animation__show="property: visible; startEvents: instruments-POI-panel-2-open; to: true"
-        animation__hide="property: visible; startEvents: instruments-POI-panel-2-close; from: false; to: true; dir: reverse">
+        rotation="0 110 0">
         <a-image src="#obs-instruments-image3"
           height="3"
           width="6">
         </a-image>
-        <a-image src="#close-button"
+        <a-image class="close-button" src="#close-button"
           position="2 1 0.5"
           width="0.5"
-          height="0.5"
-          emit-on-click="emit: instruments-POI-panel-2-close; target: #instruments-POI-panel-2">
+          height="0.5">
         </a-image>
       </a-entity>
       <!-- D-day weather chart -->
       <a-entity id="weather-chart-POI-panel" visible="false"
         position="-4 2.5 -5"
-        rotation="10 35 0"
-        animation__show="property: visible; startEvents: weather-chart-POI-panel-open; to: true"
-        animation__hide="property: visible; startEvents: weather-chart-POI-panel-close; from: false; to: true; dir: reverse">
+        rotation="10 35 0">
         <a-image src=#d-day-chart-image
           height="6"
           width="10">
         </a-image>
-        <a-image src="#close-button"
+        <a-image class="close-button" src="#close-button"
           width="0.5"
           height="0.5"
-          position="4.5 2.5 0.1"
-          emit-on-click="emit: weather-chart-POI-panel-close; target: #weather-chart-POI-panel">
+          position="4.5 2.5 0.1">
         </a-image>
       </a-entity>
       <!-- Air Observer Uniform -->
       <a-entity id="uniform-POI-panel" visible="false"
         position="-8 0 -5"
-        rotation="0 50 0"
-        animation__show="property: visible; startEvents: uniform-POI-panel-open; to: true"
-        animation__hide="property: visible; startEvents: uniform-POI-panel-close; from: false; to: true; dir: reverse">
+        rotation="0 50 0">
         <a-image src=#uniform-image
           height="4"
           width="8"
           rotation="0 0 -90">
         </a-image>
-        <a-image src="#close-button"
+        <a-image class="close-button" src="#close-button"
           width="0.5"
           height="0.5"
-          position="1.5 3.5 0.1"
-          emit-on-click="emit: uniform-POI-panel-close; target: #uniform-POI-panel">
+          position="1.5 3.5 0.1">
         </a-image>
       </a-entity>
       <!-- Archives display case -->
       <a-entity id="archives-case-POI-panel" visible="false"
         position="-5 0 0"
-        rotation="0 90 0"
-        animation__show="property: visible; startEvents: archives-case-POI-panel-open; to: true"
-        animation__hide="property: visible; startEvents: archives-case-POI-panel-close; from: false; to: true; dir: reverse">
+        rotation="0 90 0">
         <a-image src="#archives-display-image"
           width="8.2"
           height="4.6">
         </a-image>
-        <a-image src="#close-button"
+        <a-image class="close-button" src="#close-button"
           width="0.5"
           height="0.5"
-          position="3.5 2 0.1"
-          emit-on-click="emit: archives-case-POI-panel-close; target: #archives-case-POI-panel">
+          position="3.5 2 0.1">
         </a-image>
       </a-entity>
       <!-- Skua rocket -->
       <a-entity id="skua-rocket-POI-panel" visible="false"
         position="-6 1 -5.5"
-        rotation="10 60 0"
-        animation__show="property: visible; startEvents: skua-rocket-POI-panel-open; to: true"
-        animation__hide="property: visible; startEvents: skua-rocket-POI-panel-close; from: false; to: true; dir: reverse">
+        rotation="10 60 0">
         <a-image src="#skua-rocket-image"
           height="8.4"
           width="4.6"
           rotation = "0 0 0">
         </a-image>
-        <a-image src="#close-button"
+        <a-image class="close-button" src="#close-button"
           position="1.2 3.2 1"
           width="0.5"
-          height="0.5"
-          emit-on-click="emit: skua-rocket-POI-panel-close; target: #skua-rocket-POI-panel">
+          height="0.5">
         </a-image>
       </a-entity>
       <!-- Advanced microwave sounding unit -->
       <a-entity id="microwave-POI-panel" visible="false"
         position="-7 1 2"
-        rotation="0 90 0"
-        animation__show="property: visible; startEvents: microwave-POI-panel-open; to: true"
-        animation__hide="property: visible; startEvents: microwave-POI-panel-close; from: false; to: true; dir: reverse">
+        rotation="0 90 0">
         <a-image src="#microwave-image"
           height="4.6"
           width="8.4">
         </a-image>
-        <a-image src="#close-button"
+        <a-image class="close-button" src="#close-button"
           position="3.5 1.4 1"
           width="0.5"
-          height="0.5"
-          emit-on-click="emit: microwave-POI-panel-close; target: #microwave-POI-panel">
+          height="0.5">
         </a-image>
       </a-entity>
 
@@ -267,6 +239,36 @@
           event-set__2="_event: mouseleave; color: black"
           fuse="true"></a-cursor>
       </a-entity>
-
     </a-scene>
+
+    <script type="text/javascript">
+
+      // $(function(){
+      //   $('[marker-id]').click(function(){
+      //     var target = document.getElementById($(this).attr('marker-for'));
+      //     var event = new Event($(this).attr('marker-id')+'-POI-panel-open');
+      //     console.log(event);
+      //     target.dispatchEvent(event);
+      //   });
+      // });
+
+      $(function(){
+        // show a panel when its marker is clicked on
+        $('[marker-id]').click(function(){
+          var target = document.getElementById($(this).attr('marker-for'));
+          target.setAttribute('visible', true);
+        });
+      });
+
+      $(function(){
+        // hide a panel when its close button is clicked on
+        $('.close-button').click(function(){
+          var target = this.parentElement;
+          target.setAttribute('visible', false);
+        });
+      });
+
+    </script>
+
   </body>
+</html>
