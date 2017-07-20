@@ -13,7 +13,7 @@ Model of the ship captained by Robert FitzRoy, future founder of the Met Office.
 
 # Meteorological air observer uniform
 
-The mess kit uniform of Wing Commander Bryn Lewis, who served as Meteorological Air Observer during the Second World War. His task was to gather upper-air weather observations from an aircraft, hence he was stationed at RAF bases. Meteorological sorties were often flown deep into the enemy’s territory and over the Atlantic and 52 aircraft never returned. The observations were used to prepare weather forecast to advise further military actions.
+The mess kit uniform of Wing Commander Bryn Lewis, who served as Meteorological Air Observer during the Second World War. His task was to gather upper-air weather observations from an aircraft, hence he was stationed at RAF bases. Meteorological sorties were often flown deep into the enemy’s territory and over the Atlantic and 52 aircraft never returned. The observations were used to prepare weather forecasts to advise further military actions.
 
 # Weather lore
 
