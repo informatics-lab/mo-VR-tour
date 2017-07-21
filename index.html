@@ -148,7 +148,7 @@
       <!-- Display case 1 -->
       <a-entity id="instruments-POI-panel-1" visible="false"
         position="4 0 2"
-        rotation="0 70 0"
+        rotation="0 250 0"
         animation__show="property: visible; startEvents: instruments-POI-panel-1-open; to: true"
         animation__hide="property: visible; startEvents: instruments-POI-panel-1-close; from: false; to: true; dir: reverse">
         <a-image src="#thermometers-info"
@@ -156,7 +156,7 @@
           width="6.15">
         </a-image>
         <a-image src="#close-button"
-          position="-2 1 -0.5"
+          position="2.3 2 0.5"
           width="0.5"
           height="0.5"
           emit-on-click="emit: instruments-POI-panel-1-close; target: #instruments-POI-panel-1">
