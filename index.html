@@ -23,6 +23,8 @@
         <img id="beagle-info" src="images/beagle-info.svg">
         <img id="air-meters-info" src="images/air-meters-info.svg">
         <img id="thermometers-info" src="images/thermometers-info.svg">
+        <img id="barometers-info" src="images/barometers-info.svg">
+        <img id="sunshine-info" src="images/sunshine-meters.svg">
         <img id="weather-lore-info" src="images/weather-lore-info.svg">
         <img id="uniform-info" src="images/uniform-info.svg">
         <img id="skua-rocket-info" src="images/skua-rocket-info.svg">
@@ -76,6 +78,18 @@
         position="-5 -3 2.5"
         rotation="0 90 0"
         emit-on-click="emit: instruments-POI-panel-2-open; target: #instruments-POI-panel-2">
+      </a-image>
+      <!-- Display case 3 -->
+      <a-image id="instruments-POI-marker-3" src="#POI-marker-icon"
+        position="8 -2.5 2"
+        rotation="0 90 0"
+        emit-on-click="emit: instruments-POI-panel-3-open; target: #instruments-POI-panel-3">
+      </a-image>
+      <!-- Display case 4 -->
+      <a-image id="instruments-POI-marker-4" src="#POI-marker-icon"
+        position="-5 -1 3.5"
+        rotation="0 90 0"
+        emit-on-click="emit: instruments-POI-panel-4-open; target: #instruments-POI-panel-4">
       </a-image>
       <!-- D-day weather chart -->
       <a-image id="weather-chart-POI-marker" src="#POI-marker-icon"
@@ -205,7 +219,7 @@
         rotation="0 110 0"
         animation__show="property: visible; startEvents: instruments-POI-panel-2-open; to: true"
         animation__hide="property: visible; startEvents: instruments-POI-panel-2-close; from: false; to: true; dir: reverse">
-        <a-image src="#air-meters-info"
+        <a-image src="#barometers-info"
           height="4"
           width="4.88">
         </a-image>
@@ -214,6 +228,40 @@
           width="0.5"
           height="0.5"
           emit-on-click="emit: instruments-POI-panel-2-close; target: #instruments-POI-panel-2">
+        </a-image>
+      </a-entity>
+      <!-- Display case 3 -->
+      <a-entity id="instruments-POI-panel-3" visible="false"
+        position="3 0.5 1.5"
+        rotation="0 260 0"
+        animation__show="property: visible; startEvents: instruments-POI-panel-3-open; to: true"
+        animation__hide="property: visible; startEvents: instruments-POI-panel-3-close; from: false; to: true; dir: reverse">
+        <a-image src="#sunshine-info"
+          height="4"
+          width="4.68">
+        </a-image>
+        <a-image src="#close-button"
+          position="2 1.7 0.1"
+          width="0.5"
+          height="0.5"
+          emit-on-click="emit: instruments-POI-panel-3-close; target: #instruments-POI-panel-3">
+        </a-image>
+      </a-entity>
+      <!-- Display case 4 -->
+      <a-entity id="instruments-POI-panel-4" visible="false"
+        position="-4 0 2"
+        rotation="0 110 0"
+        animation__show="property: visible; startEvents: instruments-POI-panel-4-open; to: true"
+        animation__hide="property: visible; startEvents: instruments-POI-panel-4-close; from: false; to: true; dir: reverse">
+        <a-image src="#air-meters-info"
+          height="4"
+          width="4.88">
+        </a-image>
+        <a-image src="#close-button"
+          position="1.95 1.55 0.5"
+          width="0.5"
+          height="0.5"
+          emit-on-click="emit: instruments-POI-panel-4-close; target: #instruments-POI-panel-4">
         </a-image>
       </a-entity>
       <!-- D-day weather chart -->

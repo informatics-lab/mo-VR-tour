@@ -17,7 +17,7 @@ The mess kit uniform of Wing Commander Bryn Lewis, who served as Meteorological 
 
 # Weather lore
 
-The body of informal folklore relating to predicting the weather, includes proverbs and superstitions, ranging from the accurate to the absurd. Many infer the changes in weather from the behaviour of plants and animals, some focus on astronomy, astrology and clouds. The exhibition includes a wide range of records from 1480 “Dialogues on meteorology and astronomy) to the modern publications.
+The body of informal folklore relating to predicting the weather, includes proverbs and superstitions, ranging from the accurate to the absurd. Many infer the changes in weather from the behaviour of plants and animals, some focus on astronomy, astrology and clouds. The exhibition includes a wide range of records from 1480 “Dialogues on meteorology and astronomy" to the modern publications.
 
 # Library
 
