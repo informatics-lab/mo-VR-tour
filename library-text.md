@@ -1,11 +1,11 @@
 # Met obs instruments
 
-Instruments for measuring sunshine, temperature, atmospheric pressure and wind.
-Ranging in age from mid 19th century till the present.
-Cabinet 17: early sunshine recorders worked by focusing the rays of sun through spherical lens and burning a trace in a card. Automatic sunshine sensor (down right) measures the amount of radiation falling on a pair of sensors.
-Cabinet 18: Various models of thermometers: the first belonging to newly formed Meteorological Department (1854), 1868 model from a telegraph station in Portsmouth,1902 designed for Robert Scott's Antarctic expedition and maximum thermometer which recorded the highest ever shade temperature in UK (38.5C in Brogdale, Kent, 2003).
-Cabinet 19: micro-barograph designed to show small variations in atmospheric pressure (right), precision aneroid barometer (left)
-Cabinet 20: a range of air meters and anemometers, designed to measure wind speed, as well as dial (top right corner) measuring wind direction.
+* Instruments for measuring sunshine, temperature, atmospheric pressure and wind.
+* Ranging in age from mid 19th century till the present.
+* *Cabinet 17:* early sunshine recorders worked by focusing the rays of sun through spherical lens and burning a trace in a card. Automatic sunshine sensor (down right) measures the amount of radiation falling on a pair of sensors.
+* *Cabinet 18:* Various models of thermometers: the first belonging to newly formed Meteorological Department (1854), 1868 model from a telegraph station in Portsmouth,1902 designed for Robert Scott's Antarctic expedition and maximum thermometer which recorded the highest ever shade temperature in UK (38.5C in Brogdale, Kent, 2003).
+* *Cabinet 19:* micro-barograph designed to show small variations in atmospheric pressure (right), precision aneroid barometer (left)
+* *Cabinet 20:* a range of air meters and anemometers, designed to measure wind speed, as well as dial (top right corner) measuring wind direction.
 
 # HMS Beagle
 
