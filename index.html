@@ -27,6 +27,7 @@
         <img id="uniform-info" src="images/uniform-info.svg">
         <img id="skua-rocket-info" src="images/skua-rocket-info.svg">
         <img id="microwave-info" src="images/microwave-info.svg">
+        <img id="met-aeroplanes-info" src="images/met-aeroplanes-info.svg">
         <img id="close-button" src="images/close-button.svg">
         <img id="POI-marker-icon" src="images/POI-marker-icon.png">
       </a-assets>
@@ -42,6 +43,14 @@
         width="1.5"
         emit-on-click="emit: fitzroy-POI-panel-open; target: #fitzroy-POI-panel">
       </a-image>
+      <!-- Fitzroy Clock -->
+      <a-image id="clock-POI-marker" src="#POI-marker-icon"
+        position="7 -2 -8"
+        rotation="0 -45 0"
+        height="1.5"
+        width="1.5"
+        emit-on-click="emit: clock-POI-panel-open; target: #clock-POI-panel">
+      </a-image>
       <!-- HMS Beagle Model -->
       <a-image id="beagle-POI-marker" src="#POI-marker-icon"
         position="3 2.5 -10"
@@ -49,6 +58,12 @@
         height="1.5"
         width="1.5"
         emit-on-click="emit: beagle-POI-panel-open; target: #beagle-POI-panel">
+      </a-image>
+      <!-- Meteorological Aeroplanes -->
+      <a-image id"met-aeroplanes-POI-marker" src="#POI-marker-icon"
+        position="10 0 0"
+        rotation="0 90 0"
+        emit-on-click="emit: met-aeroplanes-POI-panel-open; target: #met-aeroplanes-POI-panel">
       </a-image>
       <!-- Display case 1 -->
       <a-image id="instruments-POI-marker-1" src="#POI-marker-icon"
@@ -116,6 +131,23 @@
           emit-on-click="emit: fitzroy-POI-panel-close; target: #fitzroy-POI-panel">
         </a-image>
       </a-entity>
+      <!-- Fitzroy Clock -->
+      <a-entity id="clock-POI-panel" visible="false"
+        position="3 0 -3"
+        rotation="0 -45 0"
+        animation__show="property: visible; startEvents: clock-POI-panel-open; to: true"
+        animation__hide="property: visible; startEvents: clock-POI-panel-close; from: false; to: true; dir: reverse">
+        <a-image src=#clock-info
+          width="4.72"
+          height="4">
+        </a-image>
+        <a-image src="#close-button"
+          width="0.5"
+          height="0.5"
+          position="2.2 1.8 0.1"
+          emit-on-click="emit: clock-POI-panel-close; target: #clock-POI-panel">
+        </a-image>
+      </a-entity>
       <!-- HMS Beagle Model -->
       <a-entity id="beagle-POI-panel" visible="false"
         position="1.3 1.5 -4"
@@ -131,6 +163,23 @@
           height="0.5"
           position="2.5 1.7 0.1"
           emit-on-click="emit: beagle-POI-panel-close; target: #beagle-POI-panel">
+        </a-image>
+      </a-entity>
+      <!-- Meteorological Aeroplanes -->
+      <a-entity id="met-aeroplanes-POI-panel" visible="false"
+        position="7 1 1"
+        rotation="0 280 0"
+        animation__show="property: visible; startEvents: met-aeroplanes-POI-panel-open; to: true"
+        animation__hide="property: visible; startEvents: met-aeroplanes-POI-panel-close; from: false; to: true; dir: reverse">
+        <a-image src="#met-aeroplanes-info"
+          width="5.85"
+          height="5">
+        </a-image>
+        <a-image src="#close-button"
+          position="2.3 2 0.5"
+          width="0.5"
+          height="0.5"
+          emit-on-click="emit: met-aeroplanes-POI-panel-close; target: #met-aeroplanes-POI-panel">
         </a-image>
       </a-entity>
       <!-- Display case 1 -->
