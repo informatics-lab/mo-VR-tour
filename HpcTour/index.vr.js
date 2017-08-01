@@ -2,32 +2,54 @@ import React from 'react';
 import {
   AppRegistry,
   asset,
+  Image,
   Pano,
-  Text,
   View,
 } from 'react-vr';
+import Menu from './components/scenes/layouts/Menu.js';
+import CrayPano from './components/scenes/CrayPano.js';
+import DataStorePano from './components/scenes/DataStorePano.js';
+import TelephoneExchangePano from './components/scenes/TelephoneExchangePano.js';
 
 export default class HpcTour extends React.Component {
+  constructor() {
+    super();
+    this.state={
+      background: 0,
+    }
+  }
+
+  handleMenuSelect(option) {
+    this.setState({
+      background: option
+    })
+  }
+
   render() {
+    background = this.state.background;
     return (
       <View>
-        <Pano source={asset('metoffice-building.jpg')}/>
-        <Text
-          style={{
-            backgroundColor: 'transparent',
-            fontSize: 0.8,
-            fontWeight: '400',
-            layoutOrigin: [0.5, 0.5],
-            paddingLeft: 0.2,
-            paddingRight: 0.2,
-            textAlign: 'center',
-            textAlignVertical: 'center',
-            transform: [{translate: [0, 0, -3]}],
-          }}>
-          Welcome
-        </Text>
+      {
+        (background === 1) ? (
+          <CrayPano
+            handleMenuSelect={this.handleMenuSelect.bind(this)}/>
+        ) : (
+          (background === 2) ? (
+            <DataStorePano
+              handleMenuSelect={this.handleMenuSelect.bind(this)}/>
+          ) : (
+            (background === 3) ? (
+              <TelephoneExchangePano
+                handleMenuSelect={this.handleMenuSelect.bind(this)}/>
+            ) : (
+              <Menu
+                handleMenuSelect={this.handleMenuSelect.bind(this)}/>
+            )
+          )
+        )
+      }
       </View>
-    );
+    )
   }
 };
 
