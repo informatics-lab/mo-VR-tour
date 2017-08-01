@@ -10,7 +10,7 @@ class MenuItemTitle extends React.Component {
       <View>
         <Text
           style={{
-            fontSize: 0.2,
+            fontSize: 0.15,
           }}>
           {this.props.text}
         </Text>

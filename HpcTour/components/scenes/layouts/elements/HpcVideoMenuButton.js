@@ -2,21 +2,22 @@ import React from 'react';
 import {
   asset,
   Image,
+  View,
   VrButton
 } from 'react-vr';
 
-class TelephoneExchangeMenuButton extends React.Component {
+class HpcVideoMenuButton extends React.Component {
   render() {
     return (
       <VrButton
-          onClick={() => this.props.handleMenuSelect(3)}>
-        <Image
-          source={asset('TelephoneExchangeMenuScreenshot.png')}
+        onClick={() => this.props.handleMenuSelect(4)}>
+        <View
           style={{
             width: 0.914,
             height: 0.608,
             borderColor: 'greenyellow',
-            borderWidth: 0.025
+            borderWidth: 0.025,
+            backgroundColor: 'black'
           }}
         />
       </VrButton>
@@ -24,4 +25,4 @@ class TelephoneExchangeMenuButton extends React.Component {
   }
 }
 
-module.exports = TelephoneExchangeMenuButton;
+module.exports = HpcVideoMenuButton;

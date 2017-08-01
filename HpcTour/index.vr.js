@@ -6,10 +6,11 @@ import {
   Pano,
   View,
 } from 'react-vr';
-import Menu from './components/scenes/layouts/Menu.js';
+import Menu from './components/scenes/Menu.js';
 import CrayPano from './components/scenes/CrayPano.js';
 import DataStorePano from './components/scenes/DataStorePano.js';
 import TelephoneExchangePano from './components/scenes/TelephoneExchangePano.js';
+import HpcVideoPano from './components/scenes/HpcVideoPano.js';
 
 export default class HpcTour extends React.Component {
   constructor() {
@@ -42,8 +43,13 @@ export default class HpcTour extends React.Component {
               <TelephoneExchangePano
                 handleMenuSelect={this.handleMenuSelect.bind(this)}/>
             ) : (
-              <Menu
-                handleMenuSelect={this.handleMenuSelect.bind(this)}/>
+              (background == 4) ? (
+                <HpcVideoPano
+                  handleMenuSelect={this.handleMenuSelect.bind(this)}/>
+              ) : (
+                <Menu
+                  handleMenuSelect={this.handleMenuSelect.bind(this)}/>
+              )
             )
           )
         )

@@ -15,7 +15,7 @@ class CrayMenuButton extends React.Component {
           style={{
             width: 1.0502,
             height: 0.722,
-            borderColor: 'white',
+            borderColor: 'greenyellow',
             borderWidth: 0.025
           }}
         />

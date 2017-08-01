@@ -15,7 +15,7 @@ class DataStoreMenuButton extends React.Component {
           style={{
             width: 1.096,
             height: 0.69,
-            borderColor: 'white',
+            borderColor: 'greenyellow',
             borderWidth: 0.025
           }}
         />
