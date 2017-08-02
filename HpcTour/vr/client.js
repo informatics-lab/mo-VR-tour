@@ -7,7 +7,15 @@ import {VRInstance} from 'react-vr-web';
 
 function init(bundle, parent, options) {
   const vr = new VRInstance(bundle, 'HpcTour', parent, {
-    // Add custom options here
+    // UNCOMMENT FOR GAZE CONTROLS:
+    // raycasters: [{
+    //   getType: () => "gaze",
+    //   getRayOrigin: () => [0, 0, 0],
+    //   getRayDirection: () => [0, 0, -1],
+    //   drawsCursor: () => true
+    // }],
+    // cursorVisibility: "visible",
+
     ...options,
   });
   vr.render = function() {
