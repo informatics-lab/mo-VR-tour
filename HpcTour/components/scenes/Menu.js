@@ -18,78 +18,106 @@ class Menu extends React.Component {
     super();
     this.state={
       activePanel: true,
+      menuFaderOne: new Animated.Value(1),
+      menuFaderTwo: new Animated.Value(0)
     }
   }
 
   handleClick() {
-    this.setState({
-      activePanel: !this.state.activePanel
-    })
+    {(this.state.activePanel) ? (
+      this.panelOneToTwo()
+    ) : (
+      this.panelTwoToOne()
+    )};
   }
 
   render() {
     return (
       <View>
         <Pano source={asset('metoffice-building.jpg')}/>
-        {this.state.activePanel ? (
-          <View
+        <View
+          style={{
+            height: 1.2,
+            width: 3.6,
+            layoutOrigin: [0.5, 0.5],
+            transform: [{translate: [0, 0, -3]}],
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-around',
+            backgroundColor: 'black'
+          }}>
+          <Animated.View
             style={{
-              height: 1.2,
-              width: 3.6,
-              layoutOrigin: [0.5, 0.5],
-              transform: [{translate: [0, 0, -3]}],
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-around',
-              backgroundColor: 'black'
+              opacity: this.state.menuFaderTwo
             }}>
-            <View>
-              <MenuLeftNavButton
-                handleClick={this.handleClick.bind(this)}/>
-            </View>
-            <View>
-                <MenuPanelOne
-                  handleMenuSelect={this.props.handleMenuSelect}/>
-            </View>
-            <View>
-              <MenuRightNavButton
-                handleClick={this.handleClick.bind(this)}/>
-            </View>
+            <MenuLeftNavButton
+              handleClick={this.handleClick.bind(this)}/>
+          </Animated.View>
+          <View>
+            {this.state.activePanel ? (
+              <Animated.View
+                style={{
+                  opacity: this.state.menuFaderOne
+                }}>
+                  <MenuPanelOne
+                    handleMenuSelect={this.props.handleMenuSelect}/>
+              </Animated.View>
+            ) : (
+              <Animated.View
+                style={{
+                  opacity: this.state.menuFaderTwo
+                }}>
+                  <MenuPanelTwo
+                    handleMenuSelect={this.props.handleMenuSelect}/>
+              </Animated.View>
+            )}
           </View>
-        ) : (
-          <View
+          <Animated.View
             style={{
-              height: 1.2,
-              width: 3.6,
-              layoutOrigin: [0.5, 0.5],
-              transform: [{translate: [0, 0, -3]}],
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-around',
-              backgroundColor: 'black'
+              opacity: this.state.menuFaderOne
             }}>
-            <View
-              style={{
-              }}>
-              <MenuLeftNavButton
-                handleClick={this.handleClick.bind(this)}/>
-            </View>
-            <View
-              style={{
-                marginBottom: 0.1,
-                marginTop: 0.1
-              }}>
-                <MenuPanelTwo
-                  handleMenuSelect={this.props.handleMenuSelect}/>
-            </View>
-            <View>
-              <MenuRightNavButton
-                handleClick={this.handleClick.bind(this)}/>
-            </View>
-          </View>
-        )}
+            <MenuRightNavButton
+              handleClick={this.handleClick.bind(this)}/>
+          </Animated.View>
+        </View>
       </View>
     )
+  }
+
+  panelOneToTwo() {
+    Animated.timing(
+      this.state.menuFaderOne, {
+        toValue: 0,
+      }
+    ).start(() => {
+      this.setState({
+        activePanel: !this.state.activePanel
+      }, () => {
+        Animated.timing(
+          this.state.menuFaderTwo, {
+            toValue: 1,
+          }
+        ).start()
+      })
+    })
+  }
+
+  panelTwoToOne() {
+    Animated.timing(
+      this.state.menuFaderTwo, {
+        toValue: 0,
+      }
+    ).start(() => {
+      this.setState({
+        activePanel: !this.state.activePanel
+      }, () => {
+        Animated.timing(
+          this.state.menuFaderOne, {
+            toValue: 1,
+          }
+        ).start()
+      })
+    })
   }
 }
 

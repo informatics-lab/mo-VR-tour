@@ -34,9 +34,9 @@ class MenuPanelTwo extends React.Component {
             alignItems: 'center',
             justifyContent: 'space-between',
           }}>
-          <HpcVideoMenuButton
+          <TelephoneExchangeMenuButton
             handleMenuSelect={this.props.handleMenuSelect}/>
-          <MenuItemTitle text={'HPC Video'}/>
+          <MenuItemTitle text={'Telephone Exchange'}/>
         </View>
         <View
           style={{
@@ -47,9 +47,9 @@ class MenuPanelTwo extends React.Component {
             alignItems: 'center',
             justifyContent: 'space-between',
           }}>
-          <TelephoneExchangeMenuButton
+          <HpcVideoMenuButton
             handleMenuSelect={this.props.handleMenuSelect}/>
-          <MenuItemTitle text={'Telephone Exchange'}/>
+          <MenuItemTitle text={'HPC Video'}/>
         </View>
       </View>
     )
