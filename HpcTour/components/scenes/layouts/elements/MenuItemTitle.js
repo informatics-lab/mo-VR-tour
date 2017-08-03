@@ -11,6 +11,7 @@ class MenuItemTitle extends React.Component {
         <Text
           style={{
             fontSize: 0.15,
+            textAlign: 'center'
           }}>
           {this.props.text}
         </Text>

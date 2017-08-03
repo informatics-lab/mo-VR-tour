@@ -12,6 +12,12 @@ import DataStorePano from './components/scenes/DataStorePano.js';
 import TelephoneExchangePano from './components/scenes/TelephoneExchangePano.js';
 import HpcVideoPano from './components/scenes/HpcVideoPano.js';
 
+// TO TURN ON GAZE CONTROLS:
+// go to ./vr/client.js and uncomment block in VRInstance.
+// This will introduce a cursor that is controlled by orientation of camera
+// (ie by looking around)
+// rather than by the mouse.
+
 export default class HpcTour extends React.Component {
   constructor() {
     super();
