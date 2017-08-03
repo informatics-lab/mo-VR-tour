@@ -5,6 +5,7 @@ import {
   View,
 } from 'react-vr';
 import BackToMenuButton from './layouts/elements/BackToMenuButton.js'
+import PointOfInterest from './layouts/elements/PointOfInterest.js'
 
 class CrayPano extends React.Component {
   render() {
@@ -12,8 +13,10 @@ class CrayPano extends React.Component {
       <View>
         <Pano source={asset('Cray.jpg')}/>
         <BackToMenuButton
-          handleMenuSelect={this.props.handleMenuSelect}
-          styles={this.props.styles}/>
+          styles={this.props.styles}
+          handleMenuSelect={this.props.handleMenuSelect}/>
+        <PointOfInterest
+          position={[1, 0.8, -6]}/>
       </View>
     )
   }
