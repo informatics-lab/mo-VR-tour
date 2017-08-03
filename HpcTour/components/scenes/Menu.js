@@ -35,50 +35,26 @@ class Menu extends React.Component {
     return (
       <View>
         <Pano source={asset('metoffice-building.jpg')}/>
-        <View
-          style={{
-            height: 1.2,
-            width: 3.6,
-            layoutOrigin: [0.5, 0.5],
-            transform: [{translate: [0, 0, -3]}],
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'space-around',
-            backgroundColor: 'black'
-          }}>
-          <Animated.View
-            style={{
-              opacity: this.state.menuFaderTwo
-            }}>
-            <MenuLeftNavButton
-              handleClick={this.handleClick.bind(this)}/>
-          </Animated.View>
+        <View style={this.props.styles.menuContainer}>
           <View>
             {this.state.activePanel ? (
               <Animated.View
-                style={{
-                  opacity: this.state.menuFaderOne
-                }}>
+                style={{opacity: this.state.menuFaderOne}}>
                   <MenuPanelOne
-                    handleMenuSelect={this.props.handleMenuSelect}/>
+                    handleMenuSelect={this.props.handleMenuSelect}
+                    handleClick={this.handleClick.bind(this)}
+                    styles={this.props.styles}/>
               </Animated.View>
             ) : (
               <Animated.View
-                style={{
-                  opacity: this.state.menuFaderTwo
-                }}>
+                style={{opacity: this.state.menuFaderTwo}}>
                   <MenuPanelTwo
-                    handleMenuSelect={this.props.handleMenuSelect}/>
+                    handleMenuSelect={this.props.handleMenuSelect}
+                    handleClick={this.handleClick.bind(this)}
+                    styles={this.props.styles}/>
               </Animated.View>
             )}
           </View>
-          <Animated.View
-            style={{
-              opacity: this.state.menuFaderOne
-            }}>
-            <MenuRightNavButton
-              handleClick={this.handleClick.bind(this)}/>
-          </Animated.View>
         </View>
       </View>
     )
