@@ -11,7 +11,7 @@ class VideoPlayer extends React.Component {
 constructor(props) {
   super(props);
   this.state = {
-    playerState: new MediaPlayerState({autPlay: true, muted: false})
+    playerState: new MediaPlayerState({autoPlay: true, muted: false})
   }
 }
   render() {
@@ -25,10 +25,9 @@ constructor(props) {
         <VideoControl
           style={{height: 0.2, width: 8}}
           playerState={this.state.playerState}/>
-        </View>
-
+      </View>
     )
   }
 }
 
-module.exports = VideoPlayer
+module.exports = VideoPlayer;
