@@ -13,7 +13,7 @@ class DataStorePano extends React.Component {
       <View>
         <Pano source={asset('DataStore.jpg')}/>
         <BackToMenuButton
-          position={[0, 1, -3]}
+          styles={this.props.styles}
           handleMenuSelect={this.props.handleMenuSelect}/>
         <PointOfInterest
           position={[0, 0, 6]}/>

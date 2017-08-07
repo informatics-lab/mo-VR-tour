@@ -17,40 +17,22 @@ import MenuRightNavButton from './elements/MenuRightNavButton.js';
 class MenuPanelTwo extends React.Component {
   render() {
     return (
-      <View
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'space-around',
-          height: 1,
-          width: 2.6,
-        }}>
-        <View
-          style={{
-            height: 1,
-            width: 1.2,
-            margin: 0.1,
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-          }}>
+      <View style={this.props.styles.menuPanel}>
+        <View>
+          <MenuLeftNavButton
+            handleClick={this.props.handleClick}/>
+        </View>
+        <View style={this.props.styles.menuItem}>
           <TelephoneExchangeMenuButton
             handleMenuSelect={this.props.handleMenuSelect}/>
           <MenuItemTitle text={'Telephone Exchange'}/>
         </View>
-        <View
-          style={{
-            height: 1,
-            width: 1.2,
-            margin: 0.1,
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-          }}>
+        <View style={this.props.styles.menuItem}>
           <HpcVideoMenuButton
             handleMenuSelect={this.props.handleMenuSelect}/>
           <MenuItemTitle text={'HPC Video'}/>
         </View>
+        <View style={{width: 0.3}}/>
       </View>
     )
   }

@@ -13,7 +13,7 @@ class CrayPano extends React.Component {
       <View>
         <Pano source={asset('Cray.jpg')}/>
         <BackToMenuButton
-          position={[0, 1, -3]}
+          styles={this.props.styles}
           handleMenuSelect={this.props.handleMenuSelect}/>
         <PointOfInterest
           position={[1, 0.8, -6]}/>

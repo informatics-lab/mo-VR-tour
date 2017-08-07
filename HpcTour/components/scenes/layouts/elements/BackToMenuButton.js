@@ -16,15 +16,7 @@ class BackToMenuButton extends React.Component {
   render() {
     return (
       <VrButton
-        style={{
-          layoutOrigin: [0.5, 0.5],
-          transform: [{
-            translate: this.props.position,
-          }],
-          backgroundColor: 'black',
-          width: 0.75,
-          height: 0.3
-        }}
+        style={this.props.styles.backToMenuButton}
         onClick={() => this.props.handleMenuSelect(0)}>
         <Text
           style={{

@@ -17,39 +17,21 @@ import MenuRightNavButton from './elements/MenuRightNavButton.js';
 class MenuPanelOne extends React.Component {
   render() {
     return (
-      <View
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'space-around',
-          height: 1,
-          width: 2.6,
-        }}>
-        <View
-          style={{
-            height: 1,
-            width: 1.2,
-            margin: 0.1,
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-          }}>
+      <View style={this.props.styles.menuPanel}>
+        <View style={{width: 0.3}}/>
+        <View style={this.props.styles.menuItem}>
           <CrayMenuButton
             handleMenuSelect={this.props.handleMenuSelect}/>
           <MenuItemTitle text={'Cray Supercomputers'}/>
         </View>
-        <View
-          style={{
-            height: 1,
-            width: 1.2,
-            margin: 0.1,
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-          }}>
+        <View style={this.props.styles.menuItem}>
           <DataStoreMenuButton
             handleMenuSelect={this.props.handleMenuSelect}/>
           <MenuItemTitle text={'Data Storage'}/>
+        </View>
+        <View>
+          <MenuRightNavButton
+            handleClick={this.props.handleClick}/>
         </View>
       </View>
     )
