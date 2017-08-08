@@ -6,6 +6,8 @@ import {
 } from 'react-vr';
 import BackToMenuButton from './layouts/elements/BackToMenuButton.js'
 import PointOfInterest from './layouts/elements/PointOfInterest.js'
+import VideoPlayer from './layouts/elements/VideoPlayer.js'
+import VideoPanel from './layouts/elements/VideoPanel.js'
 
 class DataStorePano extends React.Component {
   render() {
@@ -17,6 +19,7 @@ class DataStorePano extends React.Component {
           handleMenuSelect={this.props.handleMenuSelect}/>
         <PointOfInterest
           position={[0, 0, 6]}/>
+        <VideoPanel/>
       </View>
     )
   }

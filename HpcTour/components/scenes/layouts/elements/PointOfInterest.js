@@ -43,7 +43,8 @@ fadeOut() {
               width: 1,
               height: 1
             }}
-            onEnter={() => this.props.fadeIn()}>
+            // onEnter={() => this.props.fadeIn()}
+            >
             <Animated.View
              style={{
                flexDirection: 'row',

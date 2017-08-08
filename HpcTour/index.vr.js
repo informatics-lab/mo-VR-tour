@@ -12,12 +12,18 @@ import CrayPano from './components/scenes/CrayPano.js';
 import DataStorePano from './components/scenes/DataStorePano.js';
 import TelephoneExchangePano from './components/scenes/TelephoneExchangePano.js';
 import HpcVideoPano from './components/scenes/HpcVideoPano.js';
+import CylindricalPanel from 'CylindricalPanel';
 
+const MAX_TEXTURE_WIDTH = 4096;
+const MAX_TEXTURE_HEIGHT = 720;
+const degreesToPixels = degrees => -(degrees / 360) * MAX_TEXTURE_WIDTH;
+const PPM = 1 / (2 * Math.PI * 3) * MAX_TEXTURE_WIDTH;
 // TO TURN ON GAZE CONTROLS:
 // go to ./vr/client.js and uncomment block in VRInstance.
 // This will introduce a cursor that is controlled by orientation of camera
 // (ie by looking around)
 // rather than by the mouse.
+
 
 export default class HpcTour extends React.Component {
   styles = StyleSheet.create({
