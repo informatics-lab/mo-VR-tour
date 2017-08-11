@@ -7,7 +7,7 @@ import {
 import BackToMenuButton from './layouts/elements/BackToMenuButton.js'
 import PointOfInterest from './layouts/elements/PointOfInterest.js'
 import VideoPlayer from './layouts/elements/VideoPlayer.js'
-import VideoPanel from './layouts/elements/VideoPanel.js'
+import VideoPanel from './layouts/VideoPanel.js'
 
 class DataStorePano extends React.Component {
   render() {

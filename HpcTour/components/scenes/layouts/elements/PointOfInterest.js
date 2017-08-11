@@ -5,7 +5,6 @@ import {
   Image,
   Animated
 } from 'react-vr'
-import VideoPanel from './VideoPanel.js'
 
 class PointOfInterest extends React.Component {
 constructor(props) {
@@ -43,7 +42,6 @@ fadeOut() {
               width: 1,
               height: 1
             }}
-            // onEnter={() => this.props.fadeIn()}
             >
             <Animated.View
              style={{
@@ -51,7 +49,6 @@ fadeOut() {
                alignItems: 'center',
                opacity: this.state.opacityAnim
              }}>
-              <VideoPanel/>
              </Animated.View>
           </Image>
         </VrButton>
