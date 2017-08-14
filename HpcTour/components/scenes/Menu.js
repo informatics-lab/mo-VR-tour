@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Animated,
   asset,
+  Image,
   Pano,
   View,
 } from 'react-vr';
@@ -44,6 +45,9 @@ class Menu extends React.Component {
             height: MAX_TEXTURE_HEIGHT,
             width: MAX_TEXTURE_WIDTH
           }}>
+        <Image source={asset('mo-logo-solid.png')}
+          style={this.props.styles.moIcon}
+        />
         <View style={this.props.styles.menuContainer}>
           <View>
             {(this.state.activePanel === 0) ? (

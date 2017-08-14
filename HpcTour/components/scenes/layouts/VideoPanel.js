@@ -9,7 +9,6 @@ import VideoPlayer from './elements/VideoPlayer.js';
 import { Easing } from 'react-native';
 import CylindricalPanel from 'CylindricalPanel';
 
-
 class VideoPanel extends React.Component {
   constructor() {
     super();
@@ -43,6 +42,7 @@ class VideoPanel extends React.Component {
             <VideoPlayer/>
           </Animated.View>
       </View>
+
     )
   }
 }
