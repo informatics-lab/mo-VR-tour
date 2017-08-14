@@ -50,7 +50,7 @@ export default class HpcTour extends React.Component {
       height: 1.2 * PPM,
       width: 3.6 * PPM,
       layoutOrigin: [0.5, 0.5],
-      transform: [{translate: [0, 0, -3]}],
+      transform: [{translate: [360, 0, -3]}],
       position: 'absolute',
       flexDirection: 'row',
       alignItems: 'center',
@@ -59,16 +59,17 @@ export default class HpcTour extends React.Component {
     },
     backToMenuButton: {
       layoutOrigin: [0.5, 0.5],
-      transform: [{translate: [0, 1, -3]}],
+      transform: [{translate: [0, 1, 0]}],
       backgroundColor: 'black',
       width: 0.75 * PPM,
       height: 0.3 * PPM
     },
     moIcon: {
-      transform: [{translate: [0, 0, 3]}, {rotateY: 180}],
+      transform: [{translate: [2048, 0, 0]}],
       layoutOrigin: [0.5, 0.5],
       width: 2 * PPM,
-      height: 0.5 * PPM
+      height: 0.5 * PPM,
+      position: 'absolute'
     }
   })
 

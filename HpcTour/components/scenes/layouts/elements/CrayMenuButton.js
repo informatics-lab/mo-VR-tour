@@ -48,7 +48,7 @@ class CrayMenuButton extends React.Component {
       ),
       Animated.timing(
         this.state.borderWidthAnim, {
-          toValue: 0.025,
+          toValue: 0.025 * PPM,
           easing: Easing.out(Easing.exp)
         }
       )]

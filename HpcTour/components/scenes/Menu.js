@@ -38,19 +38,16 @@ class Menu extends React.Component {
           style={{
             position: 'absolute'
           }}>
-        <View
-          style={{
-            alignItems: 'center',
-            justifyContent: 'center',
-            height: MAX_TEXTURE_HEIGHT,
-            width: MAX_TEXTURE_WIDTH
-          }}>
-        <Image source={asset('mo-logo-solid.png')}
-          style={this.props.styles.moIcon}
-        />
-        <View style={this.props.styles.menuContainer}>
-          <View>
-            {(this.state.activePanel === 0) ? (
+          <View
+            style={{
+              alignItems: 'center',
+              justifyContent: 'center',
+              height: MAX_TEXTURE_HEIGHT,
+              width: MAX_TEXTURE_WIDTH
+            }}>
+            <View style={this.props.styles.menuContainer}>
+            <View>
+              {(this.state.activePanel === 0) ? (
               <Animated.View
                 style={{opacity: this.state.menuFader}}>
                   <MenuPanelOne
@@ -58,7 +55,7 @@ class Menu extends React.Component {
                     handleClick={this.goToNextPanel.bind(this)}
                     styles={this.props.styles}/>
               </Animated.View>
-            ) : (
+              ) : (
               <Animated.View
                 style={{opacity: this.state.menuFader}}>
                   <MenuPanelTwo
@@ -66,9 +63,12 @@ class Menu extends React.Component {
                     handleClick={this.goToPrevPanel.bind(this)}
                     styles={this.props.styles}/>
               </Animated.View>
-            )}
+              )}
+            </View>
           </View>
-        </View>
+          <Image source={asset('mo-logo-solid.png')}
+            style={this.props.styles.moIcon}
+            billboarding={'on'}/>
         </View>
         </CylindricalPanel>
       </View>
