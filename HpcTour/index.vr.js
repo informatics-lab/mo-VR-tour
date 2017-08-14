@@ -46,6 +46,7 @@ export default class HpcTour extends React.Component {
       width: 3.6,
       layoutOrigin: [0.5, 0.5],
       transform: [{translate: [0, 0, -3]}],
+      position: 'absolute',
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'space-around',
@@ -57,6 +58,12 @@ export default class HpcTour extends React.Component {
       backgroundColor: 'black',
       width: 0.75,
       height: 0.3
+    },
+    moIcon: {
+      transform: [{translate: [0, 0, 3]}, {rotateY: 180}],
+      layoutOrigin: [0.5, 0.5],
+      width: 2,
+      height: 0.5
     }
   })
 
