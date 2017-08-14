@@ -15,8 +15,6 @@ class CrayPano extends React.Component {
         <BackToMenuButton
           styles={this.props.styles}
           handleMenuSelect={this.props.handleMenuSelect}/>
-        <PointOfInterest
-          position={[1, 0.8, -6]}/>
       </View>
     )
   }

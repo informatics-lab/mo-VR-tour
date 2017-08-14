@@ -7,6 +7,12 @@ import {
 } from 'react-vr';
 import MenuPanelOne from './layouts/MenuPanelOne.js';
 import MenuPanelTwo from './layouts/MenuPanelTwo.js';
+import CylindricalPanel from 'CylindricalPanel';
+
+const MAX_TEXTURE_WIDTH = 4096;
+const MAX_TEXTURE_HEIGHT = 720;
+const degreesToPixels = degrees => -(degrees / 360) * MAX_TEXTURE_WIDTH;
+const PPM = 1 / (2 * Math.PI * 3) * MAX_TEXTURE_WIDTH;
 
 class Menu extends React.Component {
   constructor() {
@@ -22,6 +28,22 @@ class Menu extends React.Component {
     return (
       <View>
         <Pano source={asset('metoffice-building.jpg')}/>
+        <CylindricalPanel
+          layer={{
+            height: MAX_TEXTURE_HEIGHT,
+            width: MAX_TEXTURE_WIDTH,
+            density: MAX_TEXTURE_WIDTH
+          }}
+          style={{
+            position: 'absolute'
+          }}>
+        <View
+          style={{
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: MAX_TEXTURE_HEIGHT,
+            width: MAX_TEXTURE_WIDTH
+          }}>
         <View style={this.props.styles.menuContainer}>
           <View>
             {(this.state.activePanel === 0) ? (
@@ -43,6 +65,8 @@ class Menu extends React.Component {
             )}
           </View>
         </View>
+        </View>
+        </CylindricalPanel>
       </View>
     )
   }

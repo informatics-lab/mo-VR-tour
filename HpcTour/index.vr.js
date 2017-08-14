@@ -14,10 +14,15 @@ import TelephoneExchangePano from './components/scenes/TelephoneExchangePano.js'
 import HpcVideoPano from './components/scenes/HpcVideoPano.js';
 import CylindricalPanel from 'CylindricalPanel';
 
+
+// Constants for the Cylindrical Panel.
+// Items placed on the panel use pixels as units.
+// To convert metric to pixels, multiply by PPM.
 const MAX_TEXTURE_WIDTH = 4096;
 const MAX_TEXTURE_HEIGHT = 720;
 const degreesToPixels = degrees => -(degrees / 360) * MAX_TEXTURE_WIDTH;
 const PPM = 1 / (2 * Math.PI * 3) * MAX_TEXTURE_WIDTH;
+
 // TO TURN ON GAZE CONTROLS:
 // go to ./vr/client.js and uncomment block in VRInstance.
 // This will introduce a cursor that is controlled by orientation of camera
@@ -28,9 +33,9 @@ const PPM = 1 / (2 * Math.PI * 3) * MAX_TEXTURE_WIDTH;
 export default class HpcTour extends React.Component {
   styles = StyleSheet.create({
     menuItem: {
-      height: 1,
-      width: 1.2,
-      margin: 0.1,
+      height: 1 * PPM,
+      width: 1.2 * PPM,
+      margin: 0.1 * PPM,
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'space-between',
@@ -39,11 +44,11 @@ export default class HpcTour extends React.Component {
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'space-around',
-      height: 1,
+      height: 1 * PPM,
     },
     menuContainer: {
-      height: 1.2,
-      width: 3.6,
+      height: 1.2 * PPM,
+      width: 3.6 * PPM,
       layoutOrigin: [0.5, 0.5],
       transform: [{translate: [0, 0, -3]}],
       flexDirection: 'row',
@@ -55,8 +60,8 @@ export default class HpcTour extends React.Component {
       layoutOrigin: [0.5, 0.5],
       transform: [{translate: [0, 1, -3]}],
       backgroundColor: 'black',
-      width: 0.75,
-      height: 0.3
+      width: 0.75 * PPM,
+      height: 0.3 * PPM
     }
   })
 

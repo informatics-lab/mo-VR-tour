@@ -5,6 +5,11 @@ import {
   VrButton
 } from 'react-vr';
 
+const MAX_TEXTURE_WIDTH = 4096;
+const MAX_TEXTURE_HEIGHT = 720;
+const degreesToPixels = degrees => -(degrees / 360) * MAX_TEXTURE_WIDTH;
+const PPM = 1 / (2 * Math.PI * 3) * MAX_TEXTURE_WIDTH;
+
 class MenuLeftNavButton extends React.Component {
   render() {
     return (
@@ -12,8 +17,8 @@ class MenuLeftNavButton extends React.Component {
         onClick={() => this.props.handleClick()}>
         <Image source={asset('ChevronLeft.png')}
           style={{
-            width: 0.3,
-            height: 0.3,
+            width: 0.3 * PPM,
+            height: 0.3 * PPM,
           }}/>
       </VrButton>
     )
