@@ -8,8 +8,7 @@ import {
   View,
   VrButton
 } from 'react-vr';
-import CrayMenuButton from './elements/CrayMenuButton.js';
-import DataStoreMenuButton from './elements/DataStoreMenuButton.js';
+import MenuButton from './elements/MenuButton.js';
 import MenuItemTitle from './elements/MenuItemTitle.js';
 import MenuLeftNavButton from './elements/MenuLeftNavButton.js';
 import MenuRightNavButton from './elements/MenuRightNavButton.js';
@@ -25,13 +24,15 @@ class MenuPanelOne extends React.Component {
       <View style={this.props.styles.menuPanel}>
         <View style={{width: 0.3 * PPM}}/>
         <View style={this.props.styles.menuItem}>
-          <CrayMenuButton
-            handleMenuSelect={this.props.handleMenuSelect}/>
+          <MenuButton
+            handleMenuSelect={() => this.props.handleMenuSelect(1)}
+            source={'CrayMenuScreenshot.png'}/>
           <MenuItemTitle text={'Cray Supercomputers'}/>
         </View>
         <View style={this.props.styles.menuItem}>
-          <DataStoreMenuButton
-            handleMenuSelect={this.props.handleMenuSelect}/>
+          <MenuButton
+            handleMenuSelect={() => this.props.handleMenuSelect(2)}
+            source={'DataStoreMenuScreenshot.png'}/>
           <MenuItemTitle text={'Data Storage'}/>
         </View>
         <View>
