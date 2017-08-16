@@ -12,6 +12,7 @@ import CrayPano from './components/scenes/CrayPano.js';
 import DataStorePano from './components/scenes/DataStorePano.js';
 import TelephoneExchangePano from './components/scenes/TelephoneExchangePano.js';
 import HpcVideoPano from './components/scenes/HpcVideoPano.js';
+import styles from './components/styles.js';
 import CylindricalPanel from 'CylindricalPanel';
 
 
@@ -31,45 +32,6 @@ const PPM = 1 / (2 * Math.PI * 3) * MAX_TEXTURE_WIDTH;
 
 
 export default class HpcTour extends React.Component {
-  styles = StyleSheet.create({
-    menuItem: {
-      height: 1 * PPM,
-      width: 1.2 * PPM,
-      margin: 0.1 * PPM,
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-    },
-    menuPanel: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'space-around',
-      height: 1 * PPM,
-    },
-    menuContainer: {
-      height: 1.2 * PPM,
-      width: 3.6 * PPM,
-      position: 'absolute',
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'space-around',
-      backgroundColor: 'black'
-    },
-    backToMenuButton: {
-      transform: [{translate: [0, 2, -3]}],
-      backgroundColor: 'black',
-      width: 0.75,
-      height: 0.3
-    },
-    moIcon: {
-      transform: [{translate: [2048, 0, 0]}],
-      layoutOrigin: [0.5, 0.5],
-      width: 2 * PPM,
-      height: 0.5 * PPM,
-      position: 'absolute'
-    }
-  })
-
   constructor() {
     super();
     this.state={
@@ -91,26 +53,26 @@ export default class HpcTour extends React.Component {
         (background === 1) ? (
           <CrayPano
             handleMenuSelect={this.handleMenuSelect.bind(this)}
-            styles={this.styles}/>
+            styles={styles}/>
         ) : (
           (background === 2) ? (
             <DataStorePano
               handleMenuSelect={this.handleMenuSelect.bind(this)}
-              styles={this.styles}/>
+              styles={styles}/>
           ) : (
             (background === 3) ? (
               <TelephoneExchangePano
                 handleMenuSelect={this.handleMenuSelect.bind(this)}
-                styles={this.styles}/>
+                styles={styles}/>
             ) : (
               (background == 4) ? (
                 <HpcVideoPano
                   handleMenuSelect={this.handleMenuSelect.bind(this)}
-                  styles={this.styles}/>
+                  styles={styles}/>
               ) : (
                 <Menu
                   handleMenuSelect={this.handleMenuSelect.bind(this)}
-                  styles={this.styles}/>
+                  styles={styles}/>
               )
             )
           )
