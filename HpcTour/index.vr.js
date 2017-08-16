@@ -49,8 +49,6 @@ export default class HpcTour extends React.Component {
     menuContainer: {
       height: 1.2 * PPM,
       width: 3.6 * PPM,
-      layoutOrigin: [0.5, 0.5],
-      transform: [{translate: [360, 0, -3]}],
       position: 'absolute',
       flexDirection: 'row',
       alignItems: 'center',
@@ -58,11 +56,10 @@ export default class HpcTour extends React.Component {
       backgroundColor: 'black'
     },
     backToMenuButton: {
-      layoutOrigin: [0.5, 0.5],
-      transform: [{translate: [0, 1, 0]}],
+      transform: [{translate: [0, 1, -3]}],
       backgroundColor: 'black',
-      width: 0.75 * PPM,
-      height: 0.3 * PPM
+      width: 0.75,
+      height: 0.3
     },
     moIcon: {
       transform: [{translate: [2048, 0, 0]}],
