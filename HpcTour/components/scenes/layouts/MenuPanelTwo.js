@@ -8,15 +8,16 @@ import {
   View,
   VrButton
 } from 'react-vr';
+import {
+  MAX_TEXTURE_HEIGHT,
+  MAX_TEXTURE_WIDTH,
+  degreesToPixels,
+  PPM
+} from '../../constants.js';
 import MenuButton from './elements/MenuButton.js';
 import MenuItemTitle from './elements/MenuItemTitle.js';
 import MenuLeftNavButton from './elements/MenuLeftNavButton.js';
 import MenuRightNavButton from './elements/MenuRightNavButton.js';
-
-const MAX_TEXTURE_WIDTH = 4096;
-const MAX_TEXTURE_HEIGHT = 720;
-const degreesToPixels = degrees => -(degrees / 360) * MAX_TEXTURE_WIDTH;
-const PPM = 1 / (2 * Math.PI * 3) * MAX_TEXTURE_WIDTH;
 
 class MenuPanelTwo extends React.Component {
   render() {

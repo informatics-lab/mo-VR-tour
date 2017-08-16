@@ -7,6 +7,12 @@ import {
   StyleSheet,
   View,
 } from 'react-vr';
+import {
+  MAX_TEXTURE_HEIGHT,
+  MAX_TEXTURE_WIDTH,
+  degreesToPixels,
+  PPM
+} from './components/constants.js';
 import Menu from './components/scenes/Menu.js';
 import CrayPano from './components/scenes/CrayPano.js';
 import DataStorePano from './components/scenes/DataStorePano.js';
@@ -15,21 +21,11 @@ import HpcVideoPano from './components/scenes/HpcVideoPano.js';
 import styles from './components/styles.js';
 import CylindricalPanel from 'CylindricalPanel';
 
-
-// Constants for the Cylindrical Panel.
-// Items placed on the panel use pixels as units.
-// To convert metric to pixels, multiply by PPM.
-const MAX_TEXTURE_WIDTH = 4096;
-const MAX_TEXTURE_HEIGHT = 720;
-const degreesToPixels = degrees => -(degrees / 360) * MAX_TEXTURE_WIDTH;
-const PPM = 1 / (2 * Math.PI * 3) * MAX_TEXTURE_WIDTH;
-
 // TO TURN ON GAZE CONTROLS:
 // go to ./vr/client.js and uncomment block in VRInstance.
 // This will introduce a cursor that is controlled by orientation of camera
 // (ie by looking around)
 // rather than by the mouse.
-
 
 export default class HpcTour extends React.Component {
   constructor() {
