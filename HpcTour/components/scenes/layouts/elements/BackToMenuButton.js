@@ -21,35 +21,17 @@ class BackToMenuButton extends React.Component {
   }
   render() {
     return (
-      <CylindricalPanel
-        layer={{
-          height: MAX_TEXTURE_HEIGHT,
-          width: MAX_TEXTURE_WIDTH,
-          density: MAX_TEXTURE_WIDTH
-        }}
-        style={{
-          position: 'absolute'
-        }}>
-      <View
-        style={{
-          alignItems: 'center',
-          justifyContent: 'center',
-          height: MAX_TEXTURE_HEIGHT,
-          width: MAX_TEXTURE_WIDTH
-        }}>
         <VrButton
           style={this.props.styles.backToMenuButton}
           onClick={() => this.props.handleMenuSelect(0)}>
           <Text
             style={{
-              fontSize: 0.2 * PPM,
+              fontSize: 0.2,
               textAlign: 'center'
             }}>
             Menu
           </Text>
         </VrButton>
-      </View>
-      </CylindricalPanel>
     )
   }
 }

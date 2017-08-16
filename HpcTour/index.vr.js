@@ -59,10 +59,10 @@ export default class HpcTour extends React.Component {
     },
     backToMenuButton: {
       layoutOrigin: [0.5, 0.5],
-      transform: [{translate: [0, 1, 0]}],
+      transform: [{translate: [0, 2, -3]}],
       backgroundColor: 'black',
-      width: 0.75 * PPM,
-      height: 0.3 * PPM
+      width: 0.75,
+      height: 0.3
     },
     moIcon: {
       transform: [{translate: [2048, 0, 0]}],
