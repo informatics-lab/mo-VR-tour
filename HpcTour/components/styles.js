@@ -9,6 +9,22 @@ import {
 } from './constants.js';
 
 styles = StyleSheet.create({
+  backToMenuButton: {
+    transform: [{translate: [0, 1, -3]}],
+    layoutOrigin: [0.5, 0.,5],
+    backgroundColor: 'black',
+    width: 0.75,
+    height: 0.3
+  },
+  menuContainer: {
+    height: 1.2 * PPM,
+    width: 3.6 * PPM,
+    position: 'absolute',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    backgroundColor: 'black'
+  },
   menuCylinder: {
     alignItems: 'center',
     justifyContent: 'center',
@@ -23,36 +39,16 @@ styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
+  menuText: {
+    fontSize: 0.15 * PPM,
+    fontWeight: "500",
+    textAlign: 'center'
+  },
   menuPanel: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
     height: 1 * PPM,
-  },
-  menuContainer: {
-    height: 1.2 * PPM,
-    width: 3.6 * PPM,
-    position: 'absolute',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    backgroundColor: 'black'
-  },
-  backToMenuButton: {
-    transform: [{translate: [0, 1, -3]}],
-    layoutOrigin: [0.5, 0.,5],
-    backgroundColor: 'black',
-    width: 0.75,
-    height: 0.3
-  },
-  navButton: {
-    width: 0.3 * PPM,
-    height: 0.3 * PPM
-  },
-  menuText: {
-    fontSize: 0.15 * PPM,
-    fontWeight: "500",
-    textAlign: 'center'
   },
   moIcon: {
     transform: [{translate: [2048, 0, 0]}],
@@ -60,6 +56,10 @@ styles = StyleSheet.create({
     width: 2 * PPM,
     height: 0.5 * PPM,
     position: 'absolute'
+  },
+  navButton: {
+    width: 0.3 * PPM,
+    height: 0.3 * PPM
   },
   videoContainer: {
     margin: 0.1,

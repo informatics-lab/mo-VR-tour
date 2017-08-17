@@ -12,6 +12,8 @@ import {
 } from '../constants.js';
 import MenuPanelOne from './layouts/MenuPanelOne.js';
 import MenuPanelTwo from './layouts/MenuPanelTwo.js';
+import MenuLeftNavButton from './layouts/elements/MenuLeftNavButton.js';
+import MenuRightNavButton from './layouts/elements/MenuRightNavButton.js';
 import CylindricalPanel from 'CylindricalPanel';
 import styles from '../styles.js';
 
@@ -41,21 +43,25 @@ class Menu extends React.Component {
           <View style={styles.menuCylinder}>
             <View style={styles.menuContainer}>
             <View>
+              <MenuLeftNavButton handleClick={this.goToPrevPanel.bind(this)}/>
+            </View>
+            <View>
               {(this.state.activePanel === 0) ? (
               <Animated.View
                 style={{opacity: this.state.menuFader}}>
                   <MenuPanelOne
-                    handleMenuSelect={this.props.handleMenuSelect}
-                    handleClick={this.goToNextPanel.bind(this)}/>
+                    handleMenuSelect={this.props.handleMenuSelect}/>
               </Animated.View>
               ) : (
               <Animated.View
                 style={{opacity: this.state.menuFader}}>
                   <MenuPanelTwo
-                    handleMenuSelect={this.props.handleMenuSelect}
-                    handleClick={this.goToPrevPanel.bind(this)}/>
+                    handleMenuSelect={this.props.handleMenuSelect}/>
               </Animated.View>
               )}
+            </View>
+            <View>
+              <MenuRightNavButton handleClick={this.goToNextPanel.bind(this)}/>
             </View>
           </View>
           <Image source={asset('mo-logo-solid.png')}
