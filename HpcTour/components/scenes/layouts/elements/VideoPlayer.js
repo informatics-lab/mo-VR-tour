@@ -1,11 +1,12 @@
 import React from 'react';
 import {
-  View,
+  asset,
+  MediaPlayerState,
   Video,
   VideoControl,
-  MediaPlayerState,
-  asset
+  View,
 } from 'react-vr';
+import styles from '../../../styles.js';
 
 class VideoPlayer extends React.Component {
 constructor(props) {
@@ -16,14 +17,13 @@ constructor(props) {
 }
   render() {
     return (
-      <View
-        style={{margin: 0.1, height: 5, alignItems: 'center'}}>
+      <View style={styles.videoContainer}>
         <Video
-          style={{height: 5, width: 8, alignItems:'center'}}
+          style={styles.videoPlayer}
           source={asset('test.mp4')}
           playerState={this.state.playerState}/>
         <VideoControl
-          style={{height: 0.2, width: 8, alignItems: 'center' }}
+          style={[styles.videoPlayer, {height: 0.2}]}
           playerState={this.state.playerState}/>
       </View>
     )

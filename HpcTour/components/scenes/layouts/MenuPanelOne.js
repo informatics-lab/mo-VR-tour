@@ -1,19 +1,7 @@
 import React from 'react';
 import {
-  Animated,
-  asset,
-  Image,
-  Pano,
-  Text,
-  View,
-  VrButton
+  View
 } from 'react-vr';
-import {
-  MAX_TEXTURE_HEIGHT,
-  MAX_TEXTURE_WIDTH,
-  degreesToPixels,
-  PPM
-} from '../../constants.js';
 import MenuButton from './elements/MenuButton.js';
 import MenuItemTitle from './elements/MenuItemTitle.js';
 import MenuLeftNavButton from './elements/MenuLeftNavButton.js';
@@ -24,7 +12,9 @@ class MenuPanelOne extends React.Component {
   render() {
     return (
       <View style={styles.menuPanel}>
-        <View style={{width: 0.3 * PPM}}/>
+        <View>
+          <MenuLeftNavButton handleClick={this.props.handleClick}/>
+        </View>
         <View style={styles.menuItem}>
           <MenuButton
             handleMenuSelect={() => this.props.handleMenuSelect(1)}
@@ -38,8 +28,7 @@ class MenuPanelOne extends React.Component {
           <MenuItemTitle text={'Data Storage'}/>
         </View>
         <View>
-          <MenuRightNavButton
-            handleClick={this.props.handleClick}/>
+          <MenuRightNavButton handleClick={this.props.handleClick}/>
         </View>
       </View>
     )

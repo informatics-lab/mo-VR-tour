@@ -1,18 +1,10 @@
 import React from 'react';
+import Easing from 'react-native';
 import {
-  View,
-  Text,
-  Video,
-  Animated
+  Animated,
+  View
 } from 'react-vr';
-import {
-  MAX_TEXTURE_HEIGHT,
-  MAX_TEXTURE_WIDTH,
-  degreesToPixels,
-  PPM
-} from '../../constants.js';
 import VideoPlayer from './elements/VideoPlayer.js';
-import { Easing } from 'react-native';
 import CylindricalPanel from 'CylindricalPanel';
 
 class VideoPanel extends React.Component {

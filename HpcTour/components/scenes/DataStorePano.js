@@ -6,7 +6,6 @@ import {
 } from 'react-vr';
 import BackToMenuButton from './layouts/elements/BackToMenuButton.js'
 import PointOfInterest from './layouts/elements/PointOfInterest.js'
-import VideoPlayer from './layouts/elements/VideoPlayer.js'
 import VideoPanel from './layouts/VideoPanel.js'
 
 class DataStorePano extends React.Component {

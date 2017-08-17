@@ -1,19 +1,7 @@
 import React from 'react';
 import {
-  Animated,
-  asset,
-  Image,
-  Pano,
-  Text,
-  View,
-  VrButton
+  View
 } from 'react-vr';
-import {
-  MAX_TEXTURE_HEIGHT,
-  MAX_TEXTURE_WIDTH,
-  degreesToPixels,
-  PPM
-} from '../../constants.js';
 import MenuButton from './elements/MenuButton.js';
 import MenuItemTitle from './elements/MenuItemTitle.js';
 import MenuLeftNavButton from './elements/MenuLeftNavButton.js';
@@ -25,8 +13,7 @@ class MenuPanelTwo extends React.Component {
     return (
       <View style={styles.menuPanel}>
         <View>
-          <MenuLeftNavButton
-            handleClick={this.props.handleClick}/>
+          <MenuLeftNavButton handleClick={this.props.handleClick}/>
         </View>
         <View style={styles.menuItem}>
           <MenuButton
@@ -40,7 +27,9 @@ class MenuPanelTwo extends React.Component {
             source={'HpcMenuScreenshot.png'}/>
           <MenuItemTitle text={'HPC Video'}/>
         </View>
-        <View style={{width: 0.3 * PPM}}/>
+        <View>
+          <MenuRightNavButton handleClick={this.props.handleClick}/>
+        </View>
       </View>
     )
   }

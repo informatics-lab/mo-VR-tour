@@ -1,24 +1,15 @@
 import React from 'react';
 import {
   AppRegistry,
-  asset,
-  Image,
   Pano,
-  StyleSheet,
   View,
 } from 'react-vr';
-import {
-  MAX_TEXTURE_HEIGHT,
-  MAX_TEXTURE_WIDTH,
-  degreesToPixels,
-  PPM
-} from './components/constants.js';
+
 import Menu from './components/scenes/Menu.js';
 import CrayPano from './components/scenes/CrayPano.js';
 import DataStorePano from './components/scenes/DataStorePano.js';
 import TelephoneExchangePano from './components/scenes/TelephoneExchangePano.js';
 import HpcVideoPano from './components/scenes/HpcVideoPano.js';
-import CylindricalPanel from 'CylindricalPanel';
 
 // TO TURN ON GAZE CONTROLS:
 // go to ./vr/client.js and uncomment block in VRInstance.

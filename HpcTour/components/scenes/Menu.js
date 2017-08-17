@@ -8,9 +8,7 @@ import {
 } from 'react-vr';
 import {
   MAX_TEXTURE_HEIGHT,
-  MAX_TEXTURE_WIDTH,
-  degreesToPixels,
-  PPM
+  MAX_TEXTURE_WIDTH
 } from '../constants.js';
 import MenuPanelOne from './layouts/MenuPanelOne.js';
 import MenuPanelTwo from './layouts/MenuPanelTwo.js';
@@ -40,13 +38,7 @@ class Menu extends React.Component {
           style={{
             position: 'absolute'
           }}>
-          <View
-            style={{
-              alignItems: 'center',
-              justifyContent: 'center',
-              height: MAX_TEXTURE_HEIGHT,
-              width: MAX_TEXTURE_WIDTH
-            }}>
+          <View style={styles.menuCylinder}>
             <View style={styles.menuContainer}>
             <View>
               {(this.state.activePanel === 0) ? (

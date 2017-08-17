@@ -6,12 +6,7 @@ import {
   VrButton
 } from 'react-vr';
 import { Easing } from 'react-native';
-import {
-  MAX_TEXTURE_HEIGHT,
-  MAX_TEXTURE_WIDTH,
-  degreesToPixels,
-  PPM
-} from '../../../constants.js';
+import { PPM } from '../../../constants.js';
 
 class MenuButton extends React.Component {
   constructor() {

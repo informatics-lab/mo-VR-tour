@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-  VrButton,
+  Animated,
   asset,
   Image,
-  Animated
+  VrButton
 } from 'react-vr'
 
 class PointOfInterest extends React.Component {

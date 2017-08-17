@@ -3,7 +3,6 @@ import {
   Text,
   VrButton
 } from 'react-vr';
-import CylindricalPanel from 'CylindricalPanel';
 import styles from '../../../styles.js';
 
 class BackToMenuButton extends React.Component {

@@ -4,12 +4,6 @@ import {
   Image,
   VrButton
 } from 'react-vr';
-import {
-  MAX_TEXTURE_HEIGHT,
-  MAX_TEXTURE_WIDTH,
-  degreesToPixels,
-  PPM
-} from '../../../constants.js';
 import styles from '../../../styles.js';
 
 class MenuRightNavButton extends React.Component {
