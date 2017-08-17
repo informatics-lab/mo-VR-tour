@@ -10,17 +10,13 @@ import {
   degreesToPixels,
   PPM
 } from '../../../constants.js';
+import styles from '../../../styles.js';
 
 class MenuLeftNavButton extends React.Component {
   render() {
     return (
-      <VrButton
-        onClick={() => this.props.handleClick()}>
-        <Image source={asset('ChevronLeft.png')}
-          style={{
-            width: 0.3 * PPM,
-            height: 0.3 * PPM,
-          }}/>
+      <VrButton onClick={() => this.props.handleClick()}>
+        <Image source={asset('ChevronLeft.png')} style={styles.navButton}/>
       </VrButton>
     )
   }

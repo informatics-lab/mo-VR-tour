@@ -33,20 +33,20 @@ class VideoPanel extends React.Component {
   render() {
     return (
       <View>
-              <Animated.View
-                style={{
-                  flex: 1,
-                  flexDirection: 'column',
-                  width: 9 * PPM,
-                  height: 5 * PPM,
-                  alignItems: 'stretch',
-                  backgroundColor: 'black',
-                  opacity: this.state.fadeIn,
-                  layoutOrigin: [0.5, 0.5],
-                  transform: [{translate: [0, 0, -7]}]
-                }}>
-                <VideoPlayer/>
-              </Animated.View>
+        <Animated.View
+          style={{
+            flex: 1,
+            flexDirection: 'column',
+            width: 9,
+            height: 5,
+            alignItems: 'stretch',
+            backgroundColor: 'black',
+            opacity: this.state.fadeIn,
+            layoutOrigin: [0.5, 0.5],
+            transform: [{translate: [0, 0, -7]}]
+          }}>
+          <VideoPlayer/>
+        </Animated.View>
       </View>
 
     )

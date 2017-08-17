@@ -4,12 +4,13 @@ import {
   VrButton
 } from 'react-vr';
 import CylindricalPanel from 'CylindricalPanel';
+import styles from '../../../styles.js';
 
 class BackToMenuButton extends React.Component {
   render() {
     return (
         <VrButton
-          style={this.props.styles.backToMenuButton}
+          style={styles.backToMenuButton}
           onClick={() => this.props.handleMenuSelect(0)}>
           <Text
             style={{

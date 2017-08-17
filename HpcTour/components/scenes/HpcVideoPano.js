@@ -11,9 +11,7 @@ class HpcVideoPano extends React.Component {
     return (
       <View>
         <VideoPano source={asset('LightsUp_er.MP4')}/>
-        <BackToMenuButton
-          handleMenuSelect={this.props.handleMenuSelect}
-          styles={this.props.styles}/>
+        <BackToMenuButton handleMenuSelect={this.props.handleMenuSelect}/>
       </View>
     )
   }

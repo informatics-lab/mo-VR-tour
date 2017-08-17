@@ -18,19 +18,20 @@ import MenuButton from './elements/MenuButton.js';
 import MenuItemTitle from './elements/MenuItemTitle.js';
 import MenuLeftNavButton from './elements/MenuLeftNavButton.js';
 import MenuRightNavButton from './elements/MenuRightNavButton.js';
+import styles from '../../styles.js';
 
 class MenuPanelOne extends React.Component {
   render() {
     return (
-      <View style={this.props.styles.menuPanel}>
+      <View style={styles.menuPanel}>
         <View style={{width: 0.3 * PPM}}/>
-        <View style={this.props.styles.menuItem}>
+        <View style={styles.menuItem}>
           <MenuButton
             handleMenuSelect={() => this.props.handleMenuSelect(1)}
             source={'CrayMenuScreenshot.png'}/>
           <MenuItemTitle text={'Cray Supercomputers'}/>
         </View>
-        <View style={this.props.styles.menuItem}>
+        <View style={styles.menuItem}>
           <MenuButton
             handleMenuSelect={() => this.props.handleMenuSelect(2)}
             source={'DataStoreMenuScreenshot.png'}/>

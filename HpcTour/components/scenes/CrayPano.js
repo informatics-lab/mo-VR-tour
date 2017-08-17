@@ -12,9 +12,7 @@ class CrayPano extends React.Component {
     return (
       <View>
         <Pano source={asset('Cray.jpg')}/>
-        <BackToMenuButton
-          styles={this.props.styles}
-          handleMenuSelect={this.props.handleMenuSelect}/>
+        <BackToMenuButton handleMenuSelect={this.props.handleMenuSelect}/>
       </View>
     )
   }

@@ -39,6 +39,15 @@ styles = StyleSheet.create({
     width: 0.75,
     height: 0.3
   },
+  navButton: {
+    width: 0.3 * PPM,
+    height: 0.3 * PPM
+  },
+  menuText: {
+    fontSize: 0.15 * PPM,
+    fontWeight: "500",
+    textAlign: 'center'
+  },
   moIcon: {
     transform: [{translate: [2048, 0, 0]}],
     layoutOrigin: [0.5, 0.5],

@@ -9,17 +9,13 @@ import {
   degreesToPixels,
   PPM
 } from '../../../constants.js';
+import styles from '../../../styles.js';
 
 class MenuItemTitle extends React.Component {
   render() {
     return (
       <View>
-        <Text
-          style={{
-            fontSize: 0.15 * PPM,
-            fontWeight: "500",
-            textAlign: 'center'
-          }}>
+        <Text style={styles.menuText}>
           {this.props.text}
         </Text>
       </View>

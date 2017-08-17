@@ -18,7 +18,6 @@ import CrayPano from './components/scenes/CrayPano.js';
 import DataStorePano from './components/scenes/DataStorePano.js';
 import TelephoneExchangePano from './components/scenes/TelephoneExchangePano.js';
 import HpcVideoPano from './components/scenes/HpcVideoPano.js';
-import styles from './components/styles.js';
 import CylindricalPanel from 'CylindricalPanel';
 
 // TO TURN ON GAZE CONTROLS:
@@ -47,28 +46,18 @@ export default class HpcTour extends React.Component {
       <View>
       {
         (background === 1) ? (
-          <CrayPano
-            handleMenuSelect={this.handleMenuSelect.bind(this)}
-            styles={styles}/>
+          <CrayPano handleMenuSelect={this.handleMenuSelect.bind(this)}/>
         ) : (
           (background === 2) ? (
-            <DataStorePano
-              handleMenuSelect={this.handleMenuSelect.bind(this)}
-              styles={styles}/>
+            <DataStorePano handleMenuSelect={this.handleMenuSelect.bind(this)}/>
           ) : (
             (background === 3) ? (
-              <TelephoneExchangePano
-                handleMenuSelect={this.handleMenuSelect.bind(this)}
-                styles={styles}/>
+              <TelephoneExchangePano handleMenuSelect={this.handleMenuSelect.bind(this)}/>
             ) : (
               (background == 4) ? (
-                <HpcVideoPano
-                  handleMenuSelect={this.handleMenuSelect.bind(this)}
-                  styles={styles}/>
+                <HpcVideoPano handleMenuSelect={this.handleMenuSelect.bind(this)}/>
               ) : (
-                <Menu
-                  handleMenuSelect={this.handleMenuSelect.bind(this)}
-                  styles={styles}/>
+                <Menu handleMenuSelect={this.handleMenuSelect.bind(this)}/>
               )
             )
           )

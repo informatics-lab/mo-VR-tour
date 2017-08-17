@@ -15,6 +15,7 @@ import {
 import MenuPanelOne from './layouts/MenuPanelOne.js';
 import MenuPanelTwo from './layouts/MenuPanelTwo.js';
 import CylindricalPanel from 'CylindricalPanel';
+import styles from '../styles.js';
 
 class Menu extends React.Component {
   constructor() {
@@ -46,29 +47,27 @@ class Menu extends React.Component {
               height: MAX_TEXTURE_HEIGHT,
               width: MAX_TEXTURE_WIDTH
             }}>
-            <View style={this.props.styles.menuContainer}>
+            <View style={styles.menuContainer}>
             <View>
               {(this.state.activePanel === 0) ? (
               <Animated.View
                 style={{opacity: this.state.menuFader}}>
                   <MenuPanelOne
                     handleMenuSelect={this.props.handleMenuSelect}
-                    handleClick={this.goToNextPanel.bind(this)}
-                    styles={this.props.styles}/>
+                    handleClick={this.goToNextPanel.bind(this)}/>
               </Animated.View>
               ) : (
               <Animated.View
                 style={{opacity: this.state.menuFader}}>
                   <MenuPanelTwo
                     handleMenuSelect={this.props.handleMenuSelect}
-                    handleClick={this.goToPrevPanel.bind(this)}
-                    styles={this.props.styles}/>
+                    handleClick={this.goToPrevPanel.bind(this)}/>
               </Animated.View>
               )}
             </View>
           </View>
           <Image source={asset('mo-logo-solid.png')}
-            style={this.props.styles.moIcon}
+            style={styles.moIcon}
             billboarding={'on'}/>
         </View>
         </CylindricalPanel>
