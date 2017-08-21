@@ -10,7 +10,7 @@ class TelephoneExchangePano extends React.Component {
   render() {
     return (
       <View>
-        <Pano source={asset('TelephoneExchange.JPG')}/>
+        <Pano source={asset('TelephoneExchange.jpg')}/>
         <BackToMenuButton handleMenuSelect={this.props.handleMenuSelect}/>
       </View>
     )

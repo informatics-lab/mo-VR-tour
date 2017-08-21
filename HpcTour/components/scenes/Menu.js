@@ -30,7 +30,7 @@ class Menu extends React.Component {
   render() {
     return (
       <View>
-        <Pano source={asset('metoffice-building.JPG')}/>
+        <Pano source={asset('metoffice-building.jpg')}/>
         <CylindricalPanel
           layer={{
             height: MAX_TEXTURE_HEIGHT,
