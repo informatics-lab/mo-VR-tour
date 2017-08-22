@@ -7,6 +7,7 @@ import {VRInstance} from 'react-vr-web';
 
 function init(bundle, parent, options) {
   const vr = new VRInstance(bundle, 'HpcTour', parent, {
+    // COMMENT OUT FOLLOWING TO TURN OFF GAZE CONTROLS
     raycasters: [{
       getType: () => "gaze",
       getRayOrigin: () => [0, 0, 0],
@@ -14,6 +15,7 @@ function init(bundle, parent, options) {
       drawsCursor: () => true
     }],
     cursorVisibility: "visible",
+    // end of gaze controls block
 
     ...options,
   });
