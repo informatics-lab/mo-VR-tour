@@ -15,7 +15,6 @@ function init(bundle, parent, options) {
     //   drawsCursor: () => true
     // }],
     // cursorVisibility: "visible",
-
     ...options,
   });
   vr.render = function() {

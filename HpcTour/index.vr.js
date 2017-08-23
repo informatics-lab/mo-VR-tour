@@ -9,7 +9,7 @@ import Menu from './components/scenes/Menu.js';
 import CrayPano from './components/scenes/CrayPano.js';
 import DataStorePano from './components/scenes/DataStorePano.js';
 import TelephoneExchangePano from './components/scenes/TelephoneExchangePano.js';
-import HpcVideoPano from './components/scenes/HpcVideoPano.js';
+import HallEntrancePano from './components/scenes/HallEntrancePano.js';
 
 // TO TURN ON GAZE CONTROLS:
 // go to ./vr/client.js and uncomment block in VRInstance.
@@ -46,7 +46,7 @@ export default class HpcTour extends React.Component {
               <TelephoneExchangePano handleMenuSelect={this.handleMenuSelect.bind(this)}/>
             ) : (
               (background == 4) ? (
-                <HpcVideoPano handleMenuSelect={this.handleMenuSelect.bind(this)}/>
+                <HallEntrancePano handleMenuSelect={this.handleMenuSelect.bind(this)}/>
               ) : (
                 <Menu handleMenuSelect={this.handleMenuSelect.bind(this)}/>
               )
