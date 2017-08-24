@@ -38,9 +38,9 @@ class Menu extends React.Component {
         this.state.showWelcome,
         {
           toValue: 0,
-          duration: 3000,
+          duration: 1000,
           easing: Easing.ease,
-          delay: 4000
+          delay: 3000
         }
       ),
       Animated.timing(
