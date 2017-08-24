@@ -9,7 +9,10 @@ class TelephoneExchangePano extends React.Component {
   render() {
     return (
       <View>
-        <Pano source={asset('TelephoneExchange_nadir.jpg')}/>
+        <Pano source={asset('TelephoneExchange_nadir.jpg')}
+          style={{
+            transform: [{rotateY: 180}]
+          }}/>
       </View>
     )
   }
