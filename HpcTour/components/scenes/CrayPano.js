@@ -9,7 +9,7 @@ class CrayPano extends React.Component {
   render() {
     return (
       <View>
-        <Pano source={asset('Cray.jpg')}/>
+        <Pano source={asset('Cray_nadir.jpg')}/>
       </View>
     )
   }

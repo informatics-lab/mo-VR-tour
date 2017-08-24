@@ -9,7 +9,7 @@ class HallEntrancePano extends React.Component {
   render() {
     return (
       <View>
-        <Pano source={asset('HallEntrance.jpg')}
+        <Pano source={asset('HallEntrance_nadir.jpg')}
           style={{
             transform: [{rotateY: 180}]
           }}/>

@@ -38,16 +38,16 @@ class Menu extends React.Component {
         this.state.showWelcome,
         {
           toValue: 0,
-          duration: 3000,
+          duration: 1000,
           easing: Easing.ease,
-          delay: 4000
+          delay: 3000
         }
       ),
       Animated.timing(
         this.state.showMenu,
         {
           toValue: 1,
-          duration: 3000,
+          duration: 1000,
           easing: Easing.ease
         }
       )
@@ -57,7 +57,7 @@ class Menu extends React.Component {
   render() {
     return (
       <View>
-        <Pano source={asset('metoffice-building.jpg')}/>
+        <Pano source={asset('metoffice_building_nadir.jpg')}/>
         <CylindricalPanel
           layer={{
             height: MAX_TEXTURE_HEIGHT,
