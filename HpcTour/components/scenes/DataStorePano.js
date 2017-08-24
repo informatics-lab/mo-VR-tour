@@ -11,7 +11,6 @@ class DataStorePano extends React.Component {
     return (
       <View>
         <Pano source={asset('DataStore_nadir.jpg')}/>
-        <VideoPanel/>
       </View>
     )
   }
