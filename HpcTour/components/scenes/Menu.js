@@ -5,6 +5,7 @@ import {
   Image,
   Pano,
   View,
+  Text
 } from 'react-vr';
 import Easing from 'react-native';
 import {
@@ -37,8 +38,9 @@ class Menu extends React.Component {
         this.state.showWelcome,
         {
           toValue: 0,
-          duration: 5000,
-          easing: Easing.ease
+          duration: 3000,
+          easing: Easing.ease,
+          delay: 4000
         }
       ),
       Animated.timing(
@@ -66,23 +68,25 @@ class Menu extends React.Component {
             position: 'absolute'
           }}>
           <View style={styles.menuCylinder}>
-            <View style={{
-              flex: 1,
-              width: 8 * PPM,
+            <Animated.View style={{
+              width: 3 * PPM,
+              margin: 0.1 * PPM,
               flexDirection: 'column',
               alignItems: 'stretch',
-              layoutOrigin: [0.5, 0.5],
-              transform: [{translate: [0, 0, -5]}]
+              position: 'absolute',
+              backgroundColor: 'transparent',
+              opacity: this.state.showWelcome
             }}>
-            <Animated.Text
-              style={{
-                fontSize: 0.5 * PPM,
-                textAlign: 'center',
-                opacity: this.state.showWelcome
-              }}>
-              Welcome to Met Office VR Tour
-            </Animated.Text>
-            </View>
+              <Text
+                style={{
+                  fontSize: 100,
+                  textAlign: 'center',
+                  textAlignVertical: 'center',
+                  fontWeight: '400'
+                }}>
+                  Welcome to Met Office VR Tour
+              </Text>
+            </Animated.View>
             <Animated.View style={{
               height: 1.2 * PPM,
               width: 3.6 * PPM,
