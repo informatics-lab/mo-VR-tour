@@ -47,7 +47,7 @@ class Menu extends React.Component {
         this.state.showMenu,
         {
           toValue: 1,
-          duration: 3000,
+          duration: 1000,
           easing: Easing.ease
         }
       )
