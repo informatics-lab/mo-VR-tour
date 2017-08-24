@@ -1,20 +1,20 @@
 import React from 'react';
 import {
   asset,
-  VideoPano,
+  Pano,
   View,
 } from 'react-vr';
 import BackToMenuButton from './layouts/elements/BackToMenuButton.js'
 
-class HpcVideoPano extends React.Component {
+class HallEntrancePano extends React.Component {
   render() {
     return (
       <View>
-        <VideoPano source={asset('LightsUp_er.mp4')}/>
+        <Pano source={asset('HallEntrance.jpg')}/>
         <BackToMenuButton handleMenuSelect={this.props.handleMenuSelect}/>
       </View>
     )
   }
 }
 
-module.exports = HpcVideoPano;
+module.exports = HallEntrancePano;

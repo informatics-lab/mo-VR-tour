@@ -19,8 +19,8 @@ class MenuPanelTwo extends React.Component {
         <View style={styles.menuItem}>
           <MenuButton
             handleMenuSelect={() => this.props.handleMenuSelect(4)}
-            source={'HpcMenuScreenshot.png'}/>
-          <MenuItemTitle text={'HPC Video'}/>
+            source={'HallEntranceMenuScreenshot.png'}/>
+          <MenuItemTitle text={'Entrance'}/>
         </View>
       </View>
     )
