@@ -29,7 +29,7 @@ class VideoPanel extends React.Component {
           style={{
             flex: 1,
             flexDirection: 'column',
-            width: 9,
+            width: 8,
             height: 5,
             alignItems: 'stretch',
             backgroundColor: 'black',

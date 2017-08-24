@@ -5,10 +5,13 @@ import {
   Image,
   Pano,
   View,
+  Text
 } from 'react-vr';
+import Easing from 'react-native';
 import {
   MAX_TEXTURE_HEIGHT,
-  MAX_TEXTURE_WIDTH
+  MAX_TEXTURE_WIDTH,
+  PPM
 } from '../constants.js';
 import MenuPanelOne from './layouts/MenuPanelOne.js';
 import MenuPanelTwo from './layouts/MenuPanelTwo.js';
@@ -23,8 +26,32 @@ class Menu extends React.Component {
     this.state={
       panelArray: [0, 1],
       activePanel: 0,
-      menuFader: new Animated.Value(1),
+      showWelcome: new Animated.Value(1),
+      showMenu: new Animated.Value(0),
+      menuFader: new Animated.Value(1)
     }
+  }
+
+  componentDidMount() {
+    Animated.sequence([
+      Animated.timing(
+        this.state.showWelcome,
+        {
+          toValue: 0,
+          duration: 3000,
+          easing: Easing.ease,
+          delay: 4000
+        }
+      ),
+      Animated.timing(
+        this.state.showMenu,
+        {
+          toValue: 1,
+          duration: 3000,
+          easing: Easing.ease
+        }
+      )
+    ]).start();
   }
 
   render() {
@@ -41,7 +68,35 @@ class Menu extends React.Component {
             position: 'absolute'
           }}>
           <View style={styles.menuCylinder}>
-            <View style={styles.menuContainer}>
+            <Animated.View style={{
+              width: 3 * PPM,
+              margin: 0.1 * PPM,
+              flexDirection: 'column',
+              alignItems: 'stretch',
+              position: 'absolute',
+              backgroundColor: 'transparent',
+              opacity: this.state.showWelcome
+            }}>
+              <Text
+                style={{
+                  fontSize: 100,
+                  textAlign: 'center',
+                  textAlignVertical: 'center',
+                  fontWeight: '400'
+                }}>
+                  Welcome to Met Office VR Tour
+              </Text>
+            </Animated.View>
+            <Animated.View style={{
+              height: 1.2 * PPM,
+              width: 3.6 * PPM,
+              position: 'absolute',
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'space-around',
+              backgroundColor: 'rgba(0,0,0,0.5)',
+              opacity: this.state.showMenu
+            }}>
             <View>
               <MenuLeftNavButton handleClick={this.goToPrevPanel.bind(this)}/>
             </View>
@@ -63,7 +118,7 @@ class Menu extends React.Component {
             <View>
               <MenuRightNavButton handleClick={this.goToNextPanel.bind(this)}/>
             </View>
-          </View>
+          </Animated.View>
           <Image source={asset('mo-logo-solid.png')}
             style={styles.moIcon}
             billboarding={'on'}/>
