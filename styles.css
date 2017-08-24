@@ -3,7 +3,7 @@ body {
 }
 
 #menuButton {
-  background-image: url("../static_assets/homeIcon.png");
+  background-image: url("./HpcTour/static_assets/homeIcon.png");
   background-color: rgba(0, 0, 0, 0.7);
   background-size: 35px 35px;
   border: 2px solid rgb(255, 255, 255);
