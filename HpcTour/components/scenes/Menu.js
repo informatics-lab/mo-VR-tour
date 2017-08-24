@@ -64,39 +64,21 @@ class Menu extends React.Component {
             width: MAX_TEXTURE_WIDTH,
             density: MAX_TEXTURE_WIDTH
           }}
-          style={{
-            position: 'absolute'
-          }}>
+          style={{position: 'absolute'}}>
           <View style={styles.menuCylinder}>
-            <Animated.View style={{
-              width: 3 * PPM,
-              margin: 0.1 * PPM,
-              flexDirection: 'column',
-              alignItems: 'stretch',
-              position: 'absolute',
-              backgroundColor: 'transparent',
-              opacity: this.state.showWelcome
-            }}>
+            <Animated.View style={[
+              styles.welcomeTextContainer,
+              {opacity: this.state.showWelcome}
+            ]}>
               <Text
-                style={{
-                  fontSize: 100,
-                  textAlign: 'center',
-                  textAlignVertical: 'center',
-                  fontWeight: '400'
-                }}>
+                style={styles.welcomeText}>
                   Welcome to Met Office VR Tour
               </Text>
             </Animated.View>
-            <Animated.View style={{
-              height: 1.2 * PPM,
-              width: 3.6 * PPM,
-              position: 'absolute',
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-around',
-              backgroundColor: 'rgba(0,0,0,0.5)',
-              opacity: this.state.showMenu
-            }}>
+            <Animated.View style={[
+              styles.menuContainer,
+              {opacity: this.state.showMenu}
+            ]}>
             <View>
               <MenuLeftNavButton handleClick={this.goToPrevPanel.bind(this)}/>
             </View>
@@ -104,14 +86,12 @@ class Menu extends React.Component {
               {(this.state.activePanel === 0) ? (
               <Animated.View
                 style={{opacity: this.state.menuFader}}>
-                  <MenuPanelOne
-                    handleMenuSelect={this.props.handleMenuSelect}/>
+                  <MenuPanelOne handleMenuSelect={this.props.handleMenuSelect}/>
               </Animated.View>
               ) : (
               <Animated.View
                 style={{opacity: this.state.menuFader}}>
-                  <MenuPanelTwo
-                    handleMenuSelect={this.props.handleMenuSelect}/>
+                  <MenuPanelTwo handleMenuSelect={this.props.handleMenuSelect}/>
               </Animated.View>
               )}
             </View>

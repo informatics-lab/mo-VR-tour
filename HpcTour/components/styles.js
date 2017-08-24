@@ -65,6 +65,20 @@ styles = StyleSheet.create({
     height: 5,
     width: 8,
     alignItems:'center'
+  },
+  welcomeText: {
+    fontSize: 100,
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    fontWeight: '400'
+  },
+  welcomeTextContainer: {
+    width: 3 * PPM,
+    margin: 0.1 * PPM,
+    flexDirection: 'column',
+    alignItems: 'stretch',
+    position: 'absolute',
+    backgroundColor: 'transparent',
   }
 });
 
