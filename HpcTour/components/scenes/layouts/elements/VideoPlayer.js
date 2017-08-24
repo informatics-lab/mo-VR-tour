@@ -17,7 +17,7 @@ constructor(props) {
 }
   render() {
     return (
-      <View style={styles.videoContainer}>
+      <View>
         <Video
           style={styles.videoPlayer}
           source={asset('test.mp4')}

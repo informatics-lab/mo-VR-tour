@@ -61,11 +61,6 @@ styles = StyleSheet.create({
     width: 0.3 * PPM,
     height: 0.3 * PPM
   },
-  videoContainer: {
-    margin: 0.1,
-    height: 5,
-    alignItems: 'center'
-  },
   videoPlayer: {
     height: 5,
     width: 8,
