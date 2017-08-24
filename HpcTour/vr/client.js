@@ -20,6 +20,13 @@ function init(bundle, parent, options) {
   vr.render = function() {
     // Any custom behavior you want to perform on each frame goes here
   };
+  var btmb = document.createElement("button");
+  btmb.id = "menuButton";  
+  document.body.appendChild(btmb);
+
+  btmb.addEventListener('click', function() {
+    location.reload();
+  })
   // Begin the animation loop
   vr.start();
   return vr;

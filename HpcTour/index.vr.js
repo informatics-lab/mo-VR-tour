@@ -37,16 +37,16 @@ export default class HpcTour extends React.Component {
       <View>
       {
         (background === 1) ? (
-          <CrayPano handleMenuSelect={this.handleMenuSelect.bind(this)}/>
+          <CrayPano/>
         ) : (
           (background === 2) ? (
-            <DataStorePano handleMenuSelect={this.handleMenuSelect.bind(this)}/>
+            <DataStorePano/>
           ) : (
             (background === 3) ? (
-              <TelephoneExchangePano handleMenuSelect={this.handleMenuSelect.bind(this)}/>
+              <TelephoneExchangePano/>
             ) : (
               (background == 4) ? (
-                <HallEntrancePano handleMenuSelect={this.handleMenuSelect.bind(this)}/>
+                <HallEntrancePano/>
               ) : (
                 <Menu handleMenuSelect={this.handleMenuSelect.bind(this)}/>
               )

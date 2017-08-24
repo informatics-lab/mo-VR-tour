@@ -4,8 +4,6 @@ import {
   Pano,
   View
 } from 'react-vr';
-import BackToMenuButton from './layouts/elements/BackToMenuButton.js'
-import PointOfInterest from './layouts/elements/PointOfInterest.js'
 import VideoPanel from './layouts/VideoPanel.js'
 
 class DataStorePano extends React.Component {
@@ -13,7 +11,6 @@ class DataStorePano extends React.Component {
     return (
       <View>
         <Pano source={asset('DataStore.jpg')}/>
-        <BackToMenuButton handleMenuSelect={this.props.handleMenuSelect}/>
         <VideoPanel/>
       </View>
     )
