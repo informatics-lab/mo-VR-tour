@@ -6,6 +6,7 @@ body {
   background-image: url("./HpcTour/static_assets/homeIcon.png");
   background-color: rgba(0, 0, 0, 0.7);
   background-size: 30px 30px;
+  background-position: center;
   background-repeat: no-repeat;
   border: 2px solid rgb(255, 255, 255);
   border-radius: 5px;
