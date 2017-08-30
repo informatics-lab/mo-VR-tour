@@ -5,19 +5,18 @@ body {
 #menuButton {
   background-image: url("./HpcTour/static_assets/homeIcon.png");
   background-color: rgba(0, 0, 0, 0.7);
-  background-size: 35px 35px;
+  background-size: 30px 30px;
+  background-position: center;
+  background-repeat: no-repeat;
   border: 2px solid rgb(255, 255, 255);
   border-radius: 5px;
   top: 20px;
   color: rgb(255, 255, 255);
   cursor: pointer;
   display: inline-block;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  font-weight: normal;
   left: 18px;
-  height: 40px;
-  width: 40px;
+  height: 42px;
+  width: 42px;
   padding: 0px 10px;
   position: absolute;
 }
