@@ -16,6 +16,22 @@ styles = StyleSheet.create({
     width: 0.75,
     height: 0.3
   },
+  infoButton: {
+    transform: [{translate: [-1, 0.5, -3]}],
+    layoutOrigin: [0.5, 0.5],
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 5/PPM,
+    borderWidth: 2/PPM,
+    borderColor: 'white',
+    width: 0.5,
+    height: 0.5,
+    backgroundColor: 'rgba(0,0,0,0.7)'
+  },
+  infoButtonImage: {
+    width: 0.3,
+    height: 0.4
+  },
   menuContainer: {
     height: 1.2 * PPM,
     width: 3.6 * PPM,
