@@ -17,7 +17,6 @@ styles = StyleSheet.create({
     height: 0.3
   },
   infoButton: {
-    transform: [{translate: [-1, 0.5, -3]}],
     layoutOrigin: [0.5, 0.5],
     alignItems: 'center',
     justifyContent: 'center',

@@ -1,36 +1,21 @@
 import React from 'react';
 import {
   asset,
-  Image,
   Pano,
-  Sound,
   View,
-  VrButton,
-  VrSoundEffects
 } from 'react-vr';
-import styles from '../styles.js';
+import VoiceoverButton from './layouts/elements/VoiceoverButton.js';
 
-const cray_voiceover=asset('ZOOM0009_Tr1.wav');
+const cray_voiceover = asset('cray_supercomputer.wav');
 
 class CrayPano extends React.Component {
-
-  componentWillMount() {
-    VrSoundEffects.load(cray_voiceover);
-  }
-
-
   render() {
     return (
       <View>
         <Pano source={asset('Cray_nadir.jpg')}/>
-        <VrButton
-          onClick={() => {VrSoundEffects.play(cray_voiceover)}}
-          style={styles.infoButton}
-        >
-          <Image
-            source={asset('question-mark.png')}
-            style={styles.infoButtonImage}/>
-        </VrButton>
+        <VoiceoverButton
+          voiceover={cray_voiceover}
+          position={[-1, 0.5, -3]}/>
       </View>
     )
   }
