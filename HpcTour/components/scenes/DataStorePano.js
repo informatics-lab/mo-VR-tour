@@ -10,7 +10,7 @@ class DataStorePano extends React.Component {
   render() {
     return (
       <View>
-        <Pano source={asset('DataStore_nadir.jpg')}/>
+        <Pano source={asset('DataStore_small.jpg')}/>
       </View>
     )
   }

@@ -22,7 +22,7 @@ class CrayPano extends React.Component {
   render() {
     return (
       <View>
-        <Pano source={asset('Cray_nadir.jpg')}/>
+        <Pano source={asset('Cray_small.jpg')}/>
         <VrButton
           onClick={() => {VrSoundEffects.play(cray_voiceover)}}
           style={styles.infoButton}
